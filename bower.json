@@ -1,0 +1,19 @@
+{
+  "name": "servuc.github.io",
+  "version": "0.0.1",
+  "homepage": "https://github.com/servuc/servuc.github.io",
+  "authors": [
+    "Thomas Servuc <thomas.selle@orange.fr>"
+  ],
+  "description": "My Website",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "CV"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "foundation-sites": "~6.0.4",
+    "components-font-awesome": "~4.5.0"
+  }
+}

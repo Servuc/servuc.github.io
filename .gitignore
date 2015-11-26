@@ -1,0 +1,9 @@
+.idea/
+bower_components/
+
+!bower_components/components-font-awesome/fonts/
+!bower_components/components-font-awesome/css/font-awesome.min.css
+
+!bower_components/jquery/dist/
+
+!bower_components/foundation-sites/dist/foundation.min.js

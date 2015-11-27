@@ -44,12 +44,12 @@ p.text-justify
   text-shadow: #222 0px 0px 5px;
 }
 
-.progress-meter-2
+.progress-meter-2, .label-2
 {
   background: adjust-hue( $progress-meter-background, -15% );
 }
 
-.progress-meter-3
+.progress-meter-3, .label-3
 {
   background: adjust-hue( $progress-meter-background, -30% );
 }

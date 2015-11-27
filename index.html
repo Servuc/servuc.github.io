@@ -8,51 +8,313 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
 <body>
+    <div class="fa fa-arrow-circle-o-up"></div>
+
     <div class="top-bar">
         <div class="top-bar-left">
             <ul class="menu">
                 <li class="menu-text">Thomas SELLE (aka. Servuc)</li>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">CV</a></li>
-                <li><a href="#">Réalisations</a></li>
+                <li><a href="#" data="accueil">Accueil</a></li>
+                <li><a href="#" data="cv">CV</a></li>
+                <li><a href="#" data="rea">Réalisations</a></li>
             </ul>
         </div>
         <div class="top-bar-right">
             <ul class="menu">
-                <li><a href="#">Contactez-moi</a></li>
+                <li><a href="#" data="contact">Contactez-moi</a></li>
             </ul>
         </div>
     </div>
 
-    <div class="present">
+
+    <div class="present" data-scroll="accueil">
         <div class="callout secondary">
             <h1>Développeur web/soft/scripts</h1>
             <p>Passionné par l'informatique, j'adore coder ! Je cherche à apprendre et à découvrir de nouvelles technos.</p>
             <p>Posez votre question, j'aurais peut être une réponse <i class="fa fa-smile-o"></i></p>
         </div>
     </div>
-    <h1 class="text-center">Mon CV</h1>
+    <h1 class="text-center" data-scroll="cv">Mon CV</h1>
+    <div class="subtitle">
+        <div class="row">
+            <h2 class="subtitle">Etudes</h2>
+        </div>
+    </div>
+
     <div class="row">
-        <h2>Expériences professionnelles</h2>
         <div class="large-4 medium-6 small-12 columns">
-            <h3>Green Systèmes : 2014 - </h3>
+            <h3>DUT Informatique : 2011 - 2013</h3>
             <p class="text-justify">
-                Développement d'un logiciel interactif embarqué avec Qt sur base ARM.<br/>
-                Puis développement d'un site applicatif pour étudier des rélevés de valeurs. Les valeurs sont étudiées en C++.<br />
+                Fait à l'IUT du Havre, cette formation permet d'acquérir de très bonne base pour le développement logiciel et web. <a href="https://www.univ-lehavre.fr/fiches-oiseau/DUTINFO.pdf" class="fa fa-external-link"></a>
+            </p>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>L3 Informatique : 2013 - 2014</h3>
+            <p class="text-justify">
+                Faite à l'Université du Havre, cette licence est plus orienté génie logiciel et base de données. <a href="https://www.univ-lehavre.fr/fiches-oiseau/SLI.pdf" class="fa fa-external-link"></a>
             </p>
         </div>
         <div class="large-4 medium-6 small-12 columns end">
-            <h3>Groupe Trace : 2013 - 2014</h3>
+            <h3>Master Informatique : 2014 - 2016</h3>
             <p class="text-justify">
-                Ajout d'outils de gestion sur l'intranet de la société (C#/ASP.net).<br/>
-                Cet emploi m'a conduis à faire surtout du web, mais aussi des scripts Bash et PowerShell.
+                Fait à l'Université du Havre, ce master donne de bonnes bases en génie logiciel, gestion de projet et développement WEB 2.0. <a href="https://www.univ-lehavre.fr/fiches-oiseau/SMMA.pdf" class="fa fa-external-link"></a>
             </p>
         </div>
     </div>
+
+    <div class="subtitle">
+        <div class="row">
+            <h2>Expériences professionnelles</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>Groupe Trace : 2013 - 2014</h3>
+            <p class="text-justify">
+                Ajout d'outils de gestion sur l'intranet de la société.<br/>
+                Cet emploi m'a conduis à faire surtout du web (C#/ASP.net puis PHP), mais aussi des scripts (Bash/PowerShell).
+            </p>
+        </div>
+        <div class="large-4 medium-6 small-12 columns end">
+            <h3>Green Systèmes : 2014 - </h3>
+            <p class="text-justify">
+                Développement d'un logiciel embarqué applicatif et tactil avec Qt sur une base ARM.<br/>
+                Puis développement d'un site applicatif (PHP) pour étudier des rélevés de valeurs. Les valeurs sont reçues par radio puis manipuler et sauvegarder en C++.<br />
+            </p>
+        </div>
+    </div>
+
+    <div class="subtitle">
+        <div class="row">
+            <h2>Connaissances</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>Langages informatiques</h3>
+            <div class="progress">
+                <span class="progress-meter" style="width: 50%">
+                    <p class="progress-meter-text">C#</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter" style="width: 70%">
+                    <p class="progress-meter-text">C / C++ (Qt)</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter" style="width: 80%">
+                    <p class="progress-meter-text">Java</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter" style="width: 80%">
+                    <p class="progress-meter-text">Android</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 50%">
+                    <p class="progress-meter-text">ASP.net</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 70%">
+                    <p class="progress-meter-text">JSP</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 70%">
+                    <p class="progress-meter-text">JavaScript</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 80%">
+                    <p class="progress-meter-text">HTML5 / CSS3</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 90%">
+                    <p class="progress-meter-text">PHP</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 80%">
+                    <p class="progress-meter-text">Bash</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 80%">
+                    <p class="progress-meter-text">SQL</p>
+                </span>
+            </div>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>Outils</h3>
+            <div class="progress">
+                <span class="progress-meter" style="width: 50%">
+                    <p class="progress-meter-text">Visual Studio</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter" style="width: 90%">
+                    <p class="progress-meter-text">Eclipse</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter" style="width: 90%">
+                    <p class="progress-meter-text">IntelliJ Idea (PHP Storm, Android Studio)</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 80%">
+                    <p class="progress-meter-text">Git</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 90%">
+                    <p class="progress-meter-text">SVN</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 60%">
+                    <p class="progress-meter-text">Bootstrap</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 60%">
+                    <p class="progress-meter-text">Cake PHP</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 70%">
+                    <p class="progress-meter-text">Symfony</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 90%">
+                    <p class="progress-meter-text">Foundation ZURB (5 et 6)</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 90%">
+                    <p class="progress-meter-text">jQuery</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 90%">
+                    <p class="progress-meter-text">Slim PHP</p>
+                </span>
+            </div>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>Autres</h3>
+            <div class="progress">
+                <span class="progress-meter" style="width: 50%">
+                    <p class="progress-meter-text">SCSS</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter" style="width: 60%">
+                    <p class="progress-meter-text">Arduino</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter" style="width: 60%">
+                    <p class="progress-meter-text">Apache</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter" style="width: 80%">
+                    <p class="progress-meter-text">Bower</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 50%">
+                    <p class="progress-meter-text">Solidworks</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 70%">
+                    <p class="progress-meter-text">Microsoft/Libre Office</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 70%">
+                    <p class="progress-meter-text">LaTeX</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-2" style="width: 70%">
+                    <p class="progress-meter-text">Gimp</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 60%">
+                    <p class="progress-meter-text">Windows 8 -> 10</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 90%">
+                    <p class="progress-meter-text">Windows XP -> 7</p>
+                </span>
+            </div>
+            <div class="progress">
+                <span class="progress-meter progress-meter-3" style="width: 90%">
+                    <p class="progress-meter-text">Linux (Base Debian)</p>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="subtitle">
+        <div class="row">
+            <h2>Personnel</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>Judo</h3>
+            <p>Membre actif (6 ans) et pratiquant (14 ans) du <i>Judo Club Rogerville</i>.</p>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>Informatique</h3>
+            <p>Participation à des Hackatons : Carto Night Fever<a href="http://www.cartonightfever.com/" class="fa fa-external-link"></a> et des Games Jam (création de jeux vidéos).</p>
+            <p>Participation à des conférences.</p>
+        </div>
+        <div class="large-4 medium-6 small-12 columns end">
+            <h3>Autres</h3>
+            <p>Permis A1 - B avec véhicule</p>
+        </div>
+    </div>
+
+
+    <h1 class="text-center" data-scroll="rea">Réalisations</h1>
+    <div class="row">
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>Ovh API <a href="https://github.com/Servuc/OvhApi" class="fa fa-github"></a></h3>
+            <p>Scripts PHP permettant d'accéder facilement à l'API OVH<a href="https://api.ovh.com/" class="fa fa-external-link"></a> depuis l'interpréteur CLI de PHP.</p>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>3D-LH <a href="https://github.com/Servuc/3dlh/" class="fa fa-github"></a></h3>
+            <p>Réaliser en équipe durant la Carto Night Fever<a href="http://www.cartonightfever.com/" class="fa fa-external-link"></a>, ce projet permet de visiter le Havre en 3D.</p>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>STK-2000 <a href="https://github.com/Warrows/Super-tache-killer-2000" class="fa fa-github"></a></h3>
+            <p>Super-Tache-Killer-2000 : Réaliser en équipe durant la Viking Game Jam en 2014 sur le thême "Moustache". Ce jeu est un genre de <i>Space-Invaders</i> où une moustache de l'espace tire de la mousse sur des taches.</p>
+        </div>
+        <div class="large-4 medium-6 small-12 columns">
+            <h3>FactUC</h3>
+            <p>Site applicatif créé pour mon père. Ce site lui permet d'écrire ses factures avec prédictions des tâches effectués en fonction des réparations, lui faisant gagner un temps considérable !</p>
+        </div>
+        <div class="large-4 medium-6 small-12 columns end">
+            <h3>SnowVision <a href="http://servuc.fr/~st0001/4/"></a></h3>
+            <p>Application Android créé dans le cadre de mon Master1 permettant une interaction visuelle de la main avec un smartphone <i class="fa fa-android"></i>. Ce projet utilise <i>OpenCV Android</i>.</p>
+        </div>
+    </div>
+
+    <h1 class="text-center" data-scroll="contact">Contact : thomas<i class="fa fa-at"></i>servuc.fr <a href="https://github.com/Servuc" class="fa fa-github"></a> <a href="https://gitlab.com/u/thomas-servuc" class="fa fa-git-square"></a> <a href="http://stackoverflow.com/users/2558648/servuc" class="fa fa-stack-overflow"></a> <a href="http://steamcommunity.com/id/Servuc" class="fa fa-steam-square"></a></h1>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation-sites/dist/foundation.min.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

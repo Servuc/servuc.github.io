@@ -26,9 +26,53 @@
 h1.text-center
 {
   background : $topbar-background;
+  margin-bottom: 0px;
 }
 
 p.text-justify
 {
   padding: 15px;
+}
+
+.subtitle
+{
+  background: lighten( $topbar-background, 25% );
+}
+
+.subtitle > .row > h2
+{
+  text-shadow: #222 0px 0px 5px;
+}
+
+.progress-meter-2
+{
+  background: adjust-hue( $progress-meter-background, -15% );
+}
+
+.progress-meter-3
+{
+  background: adjust-hue( $progress-meter-background, -30% );
+}
+
+a.fa
+{
+  margin-left: 15px;
+}
+
+.fa-arrow-circle-o-up
+{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background: $topbar-menu-text;
+  color:white;
+  font-size: 25px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 3px;
+  padding-right: 2px;
+  cursor:pointer;
+  opacity: 0;
 }

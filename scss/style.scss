@@ -2,7 +2,7 @@
 @import "settings";
 
 @import '../bower_components/foundation-sites/scss/foundation.scss';
-@import '../bower_components/components-font-awesome/scss/font-awesome';
+@import '../bower_components/font-awesome/scss/font-awesome.scss';
 @include foundation-everything;
 
 .menu-text
@@ -38,7 +38,7 @@ p.text-justify
 
 .subtitle
 {
-  background: lighten( $topbar-background, 25% );
+  background: lighten( $topbar-background, 7.5% );
 }
 
 .subtitle > .row > h2

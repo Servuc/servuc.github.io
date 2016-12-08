@@ -39,11 +39,16 @@ p.text-justify
 .subtitle
 {
   background: lighten( $topbar-background, 7.5% );
+  margin: 20px 0;
 }
 
 .subtitle > .row > h2
 {
   text-shadow: #222 0px 0px 5px;
+}
+
+h1 + .subtitle {
+  margin-top: 0;
 }
 
 .progress-meter-2, .label-2

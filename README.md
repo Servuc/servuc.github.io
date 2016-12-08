@@ -5,6 +5,6 @@ To compile design, do that :
 
 ```
 npm install -g node-sass
-bower update
+bower install
 node-sass --output-style compressed scss/style.scss css/style.css
 ```

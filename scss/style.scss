@@ -1,85 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 @import "settings";
 
-@import '../bower_components/foundation-sites/scss/foundation.scss';
-@import '../bower_components/font-awesome/scss/font-awesome.scss';
+@import '../node_modules/slick-carousel/slick/slick.scss';
+@import '../node_modules/slick-carousel/slick/slick-theme.scss';
+
+@import '../node_modules/foundation-sites/scss/foundation.scss';
+@import '../node_modules/font-awesome/scss/font-awesome.scss';
 @include foundation-everything;
 
-.menu-text
-{
-  color: $topbar-menu-text;
-}
-
-.present
-{
-  height:80vh;
-  width: 100%;
-  background: url("SL550598-low.JPG") fixed center center;
-  background-size: cover;
-  padding: 10%;
-}
-
-.callout > h1
-{
-  color:black !important;
-}
-
-h1.text-center
-{
-  background : $topbar-background;
-  margin-bottom: 0px;
-}
-
-p.text-justify
-{
-  padding: 15px;
-  padding-left: 0px;
-}
-
-.subtitle
-{
-  background: lighten( $topbar-background, 7.5% );
-  margin: 20px 0;
-}
-
-.subtitle > .row > h2
-{
-  text-shadow: #222 0px 0px 5px;
-}
-
-h1 + .subtitle {
-  margin-top: 0;
-}
-
-.progress-meter-2, .label-2
-{
-  background: adjust-hue( $progress-meter-background, -15% );
-}
-
-.progress-meter-3, .label-3
-{
-  background: adjust-hue( $progress-meter-background, -30% );
-}
-
-a.fa
-{
-  margin-left: 15px;
-}
-
-.fa-arrow-circle-o-up
-{
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  background: $topbar-menu-text;
-  color:white;
-  font-size: 25px;
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 3px;
-  padding-right: 2px;
-  cursor:pointer;
-  opacity: 0;
-}
+@import "main";
+@import "slider";

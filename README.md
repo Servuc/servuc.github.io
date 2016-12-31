@@ -1,10 +1,11 @@
 # servuc.github.io
+
 My Website
 
-To compile design, do that :
+To compile *SCSS*, *JS*, and create distribuable version, do that :
 
 ```
-npm install -g node-sass
-bower install
-node-sass --output-style compressed scss/style.scss css/style.css
+(sudo) npm install -g gulp
+npm install
+gulp
 ```

@@ -1,0 +1,65 @@
+.slider-button {
+    background: $topbar-link-color;
+    border: 2px solid $topbar-link-color;
+    color: $white;
+    padding: 5px 10px;
+}
+
+.slider-button:active,
+.slider-button:hover {
+    background: $white;
+    color: $topbar-link-color;
+}
+
+.slider-button-nav {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.slider-button-nav-prev {
+   @extend .slider-button;
+   @extend .slider-button-nav;
+   left: 0;
+}
+
+.slider-button-nav-next {
+   @extend .slider-button;
+   @extend .slider-button-nav;
+   right: 0;
+}
+
+.slider-dots {
+   @extend .slider-button-nav;
+   width: 100%;
+   text-align: center;
+   margin-bottom: 0 !important;
+} 
+
+.slider-dots li {
+   content: "";
+   display: inline-block;
+   margin-right: 4px;
+}
+
+.slider-dots li:last-child {
+   margin-right: 0;
+}
+
+.slider-dots li button {
+   @extend .slider-button;
+   padding: 5px 5px;
+}
+
+.slider-dots li button.active {
+   border-color: $topbar-background;
+}
+
+.slider {
+   height: calc(100vh - 54px);
+   margin: 0 !important;
+}
+
+body {
+   overflow-x: hidden;
+}

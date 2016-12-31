@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Thomas SELLE (aka. Servuc) - CV</title>
+        <link rel="stylesheet" href="/dist/style.css">
+    </head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text">IOT - Cours 1 : Introduction</li>
+                <li><a href="#" data="accueil">Accueil</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li class="menu-text">Thomas SELLE (aka. Servuc)</li>
+                <li><a href="/">Servuc.fr</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="slider">
+        <div>your content 1</div>
+        <div>your content 2</div>
+        <div>your content 3</div>
+    </div>
+
+    <div class="slider-dots">
+        <span data="now">1</span> / <span data="total"></span> 🐻
+    </div>
+
+    <div class="slider-button-nav-prev"><i class="fa fa-arrow-circle-left"></i> Précédent</div>
+    <div class="slider-button-nav-next">Suivant <i class="fa fa-arrow-circle-right"></i></div>
+
+    <script src="/dist/jquery.min.js"></script>
+    <script src="/dist/foundation.min.js"></script>
+    <script src="/dist/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("[data='total']").text( $('.slider').children().length );
+            var mySlick = $('.slider').slick({
+                dots: false,
+                prevArrow: ".slider-button-nav-prev",
+                nextArrow: ".slider-button-nav-next"
+            }).on('afterChange', function(event, slick, currentSlide){
+                $("[data='now']").text( currentSlide + 1 );
+            });
+
+            $(this).keydown(function(e) {
+                switch(e.which) {
+                    case 37: // left
+                        mySlick.slick('slickPrev');
+                    break;
+
+                    case 32: // space
+                    case 39: // right
+                        mySlick.slick('slickNext');
+                    break;
+
+                    default: return; // exit this handler for other keys
+                }
+                e.preventDefault(); // prevent the default action (scroll / move caret)
+            });
+        });
+    </script>
+</body>
+</html>

@@ -4,6 +4,9 @@ $white: #eee !default;
 $topbar-background: #222 !default;
 $topbar-link-color: #FF8C00 !default;
 $topbar-menu-text: #B86500 !default;
+$topbar-height: 54px;
+
+$subtitle-background: lighten( $topbar-background, 7.5% );
 
 $header-color: $topbar-menu-text !default;
 

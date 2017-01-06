@@ -56,8 +56,33 @@
 }
 
 .slider {
-   height: calc(100vh - 54px);
+   height: calc(100vh - #{$topbar-height});
    margin: 0 !important;
+}
+
+.slider-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - #{$topbar-height});
+}
+
+.slider-slide .row {
+  width: 100%;
+  font-size: 30px;
+}
+
+.slick-slide h1 {
+  background: $subtitle-background;
+}
+
+.slick-list,
+.slick-track {
+  height: 100%;
+}
+
+.padding10 {
+  padding: 10px;
 }
 
 body {

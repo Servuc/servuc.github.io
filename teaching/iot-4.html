@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thomas SELLE (aka. Servuc) - IOT TP3</title>
+    <link rel="stylesheet" href="/dist/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="menu-text">IOT - TP 3 : "Simulation" d'une Block-Chain</li>
+            <li><a href="#" data-summary="bases">Les bases</a></li>
+            <li><a href="#" data-summary="communicate">Pour communiquer</a></li>
+        </ul>
+    </div>
+
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li class="menu-text">Thomas SELLE (aka. Servuc)</li>
+            <li><a href="/">Servuc.fr</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="slider">
+    <div>
+        <div class="slider-slide">
+            <div class="row">
+                <h1 class="padding10">IOT - TP 3 : "Simulation" d'une Block-Chain</h1>
+                <h2>Thomas S.</h2>
+                <h3 class="pull-right">2016-2017</h3>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="summary">IOT - TP 3 : "Simulation" d'une Block-Chain</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Sommaire</h2>
+                <ul>
+                    <li>Les bases</li>
+                    <li>Pour communiquer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="bases">Les bases</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Qu'est ce qu'une Block-Chain ? <a href="http://www.chainofthings.com/news/2017/1/20/blockchain-is-a-4th-industrial-rev-tech-for-next-gen-energy-grid"><i class="fa fa-external-link"></i></a> </h2>
+                <ul>
+                    <li>Ensemble d'éléments électriques/électroniques fonctionnant ensemble</li>
+                    <li>IA, IOT, Robots, ...</li>
+                    <li>Certains y voient la 4<sup>ème</sup> révolution industriel</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Les bases</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>La simulation dans notre cas</h2>
+                <ul>
+                    <li>Chaque groupe est un élément</li>
+                    <li>Utilisation de la puce NRF24L01 et de MySensors</li>
+                    <li>Objectif : Éclairer un chemin <i class="fa fa-smile-o"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Les bases</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Branchement de la puce NRF24L01</h2>
+                <p>
+                    C'est <a href="nrf24l01.png" target="_blank">ici</a>, mais Attention !!! NE SURTOUT PAS BRANCHER LE 5V SUR LE NRF24L01
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="communicate">Pour communiquer</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Découverte de MySensors 2.1 <a href="https://www.mysensors.org"><i class="fa fa-external-link"></i></a> </h2>
+                <p>
+                    À partir d'ici, l'utilisation de MySensors n'est pas celle prévue, mais une version plus light.
+                </p>
+                <ul>
+                    <li>Protocole Open Source et DIY basé sur NRF24L01</li>
+                    <li>Présent sur beaucoup de projets domotiques</li>
+                    <li>Message : <b>dest</b>;<b>sensor</b>;<b>command</b>;<b>ack</b>;<b>type</b>;<b>payload</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Pour communiquer</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Base de MySensors 2.1 <a href="https://www.mysensors.org/download/sensor_api_20"><i class="fa fa-external-link"></i></a> </h2>
+                4 méthodes :
+                <ul>
+                    <li><i>void setup()</i> : Méthode de l'Arduino;</li>
+                    <li><i>void presentation()</i> : Méthode pour présenter les capteurs. Appelée juste au début lorsque l'Arduino démarre;</li>
+                    <li><i>void loop()</i> : Méthode de l'Arduino;</li>
+                    <li><i>void receive(const MyMessage &message)</i> : Méthode appelée lorsqu'un message arrive</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Pour communiquer</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>MyMessage <a href="https://www.mysensors.org/download/sensor_api_20#message-constructor"><i class="fa fa-external-link"></i></a> </h2>
+                Il s'agit de la classe qui gère les messages. Un message est associé à un capteur. Un nœud contient plusieurs capteurs.
+                <ul>
+                    <li><i>MyMessage msg(CHILD_ID, TYPE) </i> : Constructeur, le type vient d'une énumération et commence par <b>V_</b>;</li>
+                    <li><i>msg.setDestination( int )</i> : Change le nœud de destination (0 par défaut, la passerelle);</li>
+                    <li><i>send( msg.set( VARIABLE ))</i> : Envoi une variable au nœud de destination.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Pour communiquer</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>MyMessage <a href="https://github.com/mysensors/MySensors/blob/development/core/MyMessage.h"><i class="fa fa-external-link"></i></a> </h2>
+                <ul>
+                    <li><i>msg.sender</i> : ID du nœud émetteur;</li>
+                    <li><i>msg.sensor</i> : Capteur lié au message;</li>
+                    <li><i>msg.type</i> : Type du message (énum. <b>mysensor_sensor</b>/<b>mysensor_data</b>/<b>mysensor_internal</b>);</li>
+                    <li><i>mGetCommand(msg.command_ack_payload)</i> : Commande du message (énum. <b>mysensor_command</b>).</li>
+                    <li><i>msg.getString(), msg.getBool(), msg.getFloat(), msg.getInt(), ...</i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Pour communiquer</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Détail du TP</h2>
+                <p>
+                    L'objectif ici est de créer un réseau Block-Chain très basique. Un nœud maitre (le <a href="https://fr.wikipedia.org/wiki/La_grande_question_sur_la_vie,_l'univers_et_le_reste">42</a>) enverra à l'un des nœuds esclaves (10,11,12,13,14,15) un nœud de destination.
+                </p>
+                <p>
+                    Le nœud de départ devra alors s'allumer et transmettre à un nœud adjacent un message pour lui dire d'aller au nœud suivant. Ainsi de suite jusqu'au nœud final. Les Arduinos sur le passage devront s'allumer. Le message de transmission sera sur fait sur le capteur 1.
+                </p>
+                <p>
+                    C'est flou ? <i class="fa fa-smile-o"></i> Allons à la slide suivante !
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Pour communiquer</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Détail du TP</h2>
+                <p>
+                    Par exemple, 42 envoie au nœud 14 la valeur 11 sur le capteur 1, voici un résultat possible que l'on doit obtenir :
+                </p>
+                <div style="text-align: center">
+                    <table>
+                        <tr>
+                            <td>10</td>
+                            <td bgcolor="#FF8C00">12</td>
+                            <td bgcolor="#FF8C00">14</td>
+                            <td rowspan="2">42</td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#FF8C00">11</td>
+                            <td bgcolor="#FF8C00">13</td>
+                            <td>15</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Pour communiquer</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Le code de base</h2>
+                <h3><a href="https://gist.github.com/Servuc/cd3605c9591cc83a3442f3cff2bec3f0">Link <i class="fa fa-github"></i></a></h3>
+                <p>
+                    Code à compléter. Il suffit de faire correspondre votre code avec vos voisins <i class="fa fa-smile-o"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">EXTRA</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Fin ...</h2>
+                <div>
+                    Prenez 5 minutes de feedback en allant <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqZlCjTQCP_gT36y3IsxLPU6fZ678ZFXMwsQdejZai6XvQlg/viewform">ici</a> s'il vous plait <i class="fa fa-smile-o"></i>
+                </div>
+                <a href="http://imgur.com/gallery/jzbdd">
+                    <img src="http://i.imgur.com/Wj6iE7i.gif">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="slider-dots">
+    Dernière maj : Voir <a href="https://github.com/Servuc/servuc.github.io">Github</a> 🐻 <span data="now">1</span> / <span data="total"></span>
+</div>
+
+<div class="slider-button-nav-prev"><i class="fa fa-arrow-circle-left"></i> Précédent</div>
+<div class="slider-button-nav-next">Suivant <i class="fa fa-arrow-circle-right"></i></div>
+
+<script src="/dist/jquery.min.js"></script>
+<script src="/dist/foundation.min.js"></script>
+<script src="/dist/slick.min.js"></script>
+<script src="/dist/teaching.js"></script>
+</body>
+</html>

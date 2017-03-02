@@ -53,7 +53,7 @@
         <h1 class="text-center" data-summary="bases">Les bases</h1>
         <div class="slider-slide">
             <div class="row">
-                <h2>Qu'est ce qu'une Block-Chain ? <a href="http://www.chainofthings.com/news/2017/1/20/blockchain-is-a-4th-industrial-rev-tech-for-next-gen-energy-grid"><i class="fa fa-external-link"></i></a> </h2>
+                <h2>Qu'est ce qu'une Block-Chain ? <a href="http://www.chainofthings.com/news/2017/1/20/blockchain-is-a-4th-industrial-rev-tech-for-next-gen-energy-grid" target="_blank"><i class="fa fa-external-link"></i></a> </h2>
                 <ul>
                     <li>Ensemble d'éléments électriques/électroniques fonctionnant ensemble</li>
                     <li>IA, IOT, Robots, ...</li>
@@ -84,6 +84,10 @@
                 <h2>Branchement de la puce NRF24L01</h2>
                 <p>
                     C'est <a href="nrf24l01.png" target="_blank">ici</a>, mais Attention !!! NE SURTOUT PAS BRANCHER LE 5V SUR LE NRF24L01
+                </p>
+                <h2>Installation de la librairie MySensors</h2>
+                <p>
+                    <a href="https://www.mysensors.org/about/arduino#installing-the-sensor-libraries" target="_blank">RTFM 🦄</a>
                 </p>
             </div>
         </div>
@@ -159,7 +163,7 @@
             <div class="row">
                 <h2>Détail du TP</h2>
                 <p>
-                    L'objectif ici est de créer un réseau Block-Chain très basique. Un nœud maitre (le <a href="https://fr.wikipedia.org/wiki/La_grande_question_sur_la_vie,_l'univers_et_le_reste">42</a>) enverra à l'un des nœuds esclaves (10,11,12,13,14,15) un nœud de destination.
+                    L'objectif ici est de créer un réseau Block-Chain très basique. Un nœud maitre (le 0) enverra à l'un des nœuds esclaves (10,11,12,13,14,15) un nœud de destination.
                 </p>
                 <p>
                     Le nœud de départ devra alors s'allumer et transmettre à un nœud adjacent un message pour lui dire d'aller au nœud suivant. Ainsi de suite jusqu'au nœud final. Les Arduinos sur le passage devront s'allumer. Le message de transmission sera sur fait sur le capteur 1.
@@ -177,7 +181,7 @@
             <div class="row">
                 <h2>Détail du TP</h2>
                 <p>
-                    Par exemple, 42 envoie au nœud 14 la valeur 11 sur le capteur 1, voici un résultat possible que l'on doit obtenir :
+                    Par exemple, 0 envoie au nœud 14 la valeur 11 sur le capteur V_POSITION (<a href="https://www.mysensors.org/download/serial_api_20#set,-req" target="_blank">49</a>), voici un résultat possible que l'on doit obtenir :
                 </p>
                 <div style="text-align: center">
                     <table>
@@ -185,7 +189,7 @@
                             <td>10</td>
                             <td bgcolor="#FF8C00">12</td>
                             <td bgcolor="#FF8C00">14</td>
-                            <td rowspan="2">42</td>
+                            <td rowspan="0">42</td>
                         </tr>
                         <tr>
                             <td bgcolor="#FF8C00">11</td>
@@ -194,6 +198,9 @@
                         </tr>
                     </table>
                 </div>
+                <p>
+                    Autre détail important, si le capteur reçoit un message de la passerelle avec le type V_LIGHT_LEVEL (23), la lumière doit s'éteindre.
+                </p>
             </div>
         </div>
     </div>
@@ -205,7 +212,10 @@
                 <h2>Le code de base</h2>
                 <h3><a href="https://gist.github.com/Servuc/cd3605c9591cc83a3442f3cff2bec3f0">Link <i class="fa fa-github"></i></a></h3>
                 <p>
-                    Code à compléter. Il suffit de faire correspondre votre code avec vos voisins <i class="fa fa-smile-o"></i>
+                    Code à compléter. Il suffit de faire correspondre votre code avec vos voisins.
+                </p>
+                <p>
+                    PS : J'ai mis des TODOs un peu partout <i class="fa fa-smile-o"></i>
                 </p>
             </div>
         </div>

@@ -88,3 +88,10 @@
 body {
    overflow-x: hidden;
 }
+
+.code {
+  font-family: monospace;
+  background: transparentize( $topbar-background, 0.95);
+  color: $topbar-menu-text;
+  padding:5px;
+}

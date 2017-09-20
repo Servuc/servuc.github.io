@@ -43,7 +43,8 @@
                 <h2>Sommaire</h2>
                 <ul>
                     <li>Blink</li>
-                    <li>Suite</li>
+                    <li>Interruption</li>
+                    <li>Serial</li>
                 </ul>
                 <h2>Important</h2>
                 <p>Pour mieux suivre ce cours, voici <a href="https://github.com/Servuc/jaizappe/blob/master/arduino.pdf">un support sous forme de mémo</a> <i class="fa fa-smile-o"></i></p>
@@ -55,13 +56,38 @@
         <h1 class="text-center" data-summary="blink">Blink</h1>
         <div class="slider-slide">
             <div class="row">
-                <h2>Blink</h2>
-                <ol>
-                    <li>Faire clignoter la LED du PIN 13</li>
-                    <li>Faire clignoter une LED sur un autre pin <a href="blink-1.svg" target="_blank"><i class="fa fa-external-link"></i></a></li>
-                    <li>Faire clignoter une LED puis une autre après avoir fait une interruption <a href="blink-2.svg" target="_blank"><i class="fa fa-external-link"></i></a></li>
-                    <li>Faire clignoter une LED en l'allumant et l'éteignant progressivement <a href="blink-3.svg" target="_blank"><i class="fa fa-external-link"></i></a></li>
-                </ol>
+                <h2>Faire clignoter la LED du PIN 13</h2>
+                <p>Zéro branchement <i class="fa fa-smile-o"></i></p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="blink">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Faire clignoter la LED du PIN 13</h2>
+                <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-blink1.ino"></script>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="blink">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Faire clignoter une LED sur un autre pin</h2>
+                <img src="blink-1.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="blink">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Faire clignoter une LED sur un autre pin</h2>
+                <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-blink2.ino"></script>
             </div>
         </div>
     </div>
@@ -70,14 +96,65 @@
         <h1 class="text-center">Blink</h1>
         <div class="slider-slide">
             <div class="row">
-                <h2>Blink - Petit jeu</h2>
+                <h2>Fade Blink (PWM pin)</h2>
+                <img src="blink-1.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Blink et interruption</h2>
+                <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-blink4.ino"></script>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Blink et interruption</h2>
                 <p>
-                    Nécessite une LED et un interrupteur.  <a href="blink-4.svg" target="_blank"><i class="fa fa-external-link"></i></a>
+                    Nécessite une LED et un interrupteur.<br />
+                    <b>Objectif</b> : Allumer la LED 1 seconde après avoir interrompu le programme.
                 </p>
+                <img src="blink-4.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Blink et interruption</h2>
+                <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-blink3.ino"></script>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Capteur analogue</h2>
                 <p>
-                    <b>Objectif</b> : Allumer la LED x secondes (1 - 10), et utiliser un bouton pour faire le même temps. On pourra ajouter un petit pourcentage d'erreur, c'est plus cool !<br />
-                    Ne pas utiliser les broches d'interruptions !
+                    Nécessite un capteur de mesure (LUX, db, hPa, ...).<br />
                 </p>
+                <img src="extensions-3.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Blink et interruption</h2>
+                <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-analogSensor.ino "></script>
             </div>
         </div>
     </div>
@@ -90,8 +167,8 @@
                 <p>
                     Débugger, il faut utiliser 2 méthodes (au moins) :
                     <ul>
-                        <li><i>Dans le setup : </i>Serial.begin( 9600 );</li>
-                        <li><i>Où vous voulez : </i>Serial.print( VAR ); Serial.println( VAR )</li>
+                        <li><i>Dans le setup : </i><span class="code">Serial.begin( 9600 );</span></li>
+                <li><i>Où vous voulez : </i><span class="code">Serial.print( VAR ); Serial.println( VAR )</span><br /><i class="code">VAR</i> est un "texte" ou une variable.</li>
                     </ul>
                 </p>
             </div>
@@ -127,10 +204,21 @@
     </div>
 
     <div>
-        <h1 class="text-center" data-summary="next">Suite</h1>
+        <h1 class="text-center">Serial</h1>
         <div class="slider-slide">
             <div class="row">
-                <h2>En fonction du matos 🐻</h2>
+                <h2>Exemple JS</h2>
+                <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-serial.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Serial</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Exemple Arduino</h2>
+                <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-serial.ino"></script>
             </div>
         </div>
     </div>

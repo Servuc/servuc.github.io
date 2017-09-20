@@ -10,7 +10,7 @@ gulp.task('sass', function (){
         outputStyle: 'expanded'
     }))
     .pipe(prefix(
-        "last 1 version", "> 1%", "ie 8", "ie 7"
+        'last 2 versions', 'ie >= 9'
     ))
     .pipe(gulp.dest('./dist'))
     .pipe(minifycss())

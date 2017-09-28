@@ -53,11 +53,34 @@
     </div>
 
     <div>
+        <h1 class="text-center">IOT - TP 1 : L'environnement Arduino</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Base de l'Arduino</h2>
+                <p>2 fonctions essentiels :
+                <ul>
+                    <li><span class="code">void setup();</span> : Fonction permettant d'initialiser l'Arduino;</li>
+                    <li><span class="code">void loop();</span> : Fonction appelé automatiquement en boucle, après <span class="code">setup</span>, actions sur l'Arduino.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
         <h1 class="text-center" data-summary="blink">Blink</h1>
         <div class="slider-slide">
             <div class="row">
                 <h2>Faire clignoter la LED du PIN 13</h2>
                 <p>Zéro branchement <i class="fa fa-smile-o"></i></p>
+                <p>
+                    Fonctions :
+                <ul>
+                    <li><span class="code">pinMode( pin, INPUT/OUTPUT );</span></li>
+                    <li><span class="code">delay( microseconds );</span> : Équivalent à <span class="code">usleep();</span> (Ne sert à rien dans les interruptions);</li>
+                    <li><span class="code">digitalWrite( pin, LOW/HIGH );</span></li>
+                </ul>
+                </p>
             </div>
         </div>
     </div>
@@ -96,8 +119,11 @@
         <h1 class="text-center">Blink</h1>
         <div class="slider-slide">
             <div class="row">
-                <h2>Fade Blink (PWM pin)</h2>
+                <h2>Fade Blink (PWM ou ~ pin)</h2>
                 <img src="blink-1.svg" />
+                <p>
+                    <span class="code">analogWrite( pin, value );</span> : Permet d'envoyer une puissance de 0 à 5V (ou 3.3V) en mettant <b>value</b> de 0 à 255.
+                </p>
             </div>
         </div>
     </div>
@@ -106,8 +132,32 @@
         <h1 class="text-center">Blink</h1>
         <div class="slider-slide">
             <div class="row">
-                <h2>Blink et interruption</h2>
+                <h2>Fade Blink (PWM ou ~ pin)</h2>
                 <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-blink4.ino"></script>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Interrupteur : Pourquoi une résistance relié au GND ?</h2>
+                <p>
+                    <ul>
+                        <li>Gauche : Les interférences envoient des faux positifs à l'Arduino;</li>
+                        <li>Droite : Les interférences ne sont pas assez puissantes face au 0V.</li>
+                    </ul>
+                </p>
+                <div class="small-12 medium-6 column">
+                    <img src="switch-1.svg" />
+                </div>
+                <div class="small-12 medium-6 column">
+                    <img src="switch-2.svg" />
+                </div>
+                <p>
+                    Dans l'absolu il faudrait un condensateur autour de l'interrupteur pour éviter les rebonds (faux positifs mécaniques).
+                </p>
             </div>
         </div>
     </div>
@@ -119,9 +169,28 @@
                 <h2>Blink et interruption</h2>
                 <p>
                     Nécessite une LED et un interrupteur.<br />
-                    <b>Objectif</b> : Allumer la LED 1 seconde après avoir interrompu le programme.
+                    <b>Objectif</b> : Allumer la LED 1 seconde après avoir interrompu le programme. (Voir diapo suivantes).
+                    <img src="blink-4.svg" />
+
                 </p>
-                <img src="blink-4.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Blink</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Blink et interruption</h2>
+                <p>
+                    <span class="code">attachInterrupt(digitalPinToInterrupt( pin ), fonction, type );</span>
+                    <ul>
+                        <li><b>pin</b> : Pins digitaux, voir détails sur le site officiel d'Arduino;</li>
+                        <li><b>fonction</b> : Lien une fonction de type <span class="code">void fonction();</span>, il suffit juste de mettre <b>fonction</b> en paramètre;</li>
+                        <li><b>type</b> : <span class="code">HIGH</span>, <span class="code">LOW</span>, <span class="code">RISING</span> ou <span class="code">FALLING</span></li>
+                    </ul>
+                </p>
+                <b>NE PAS METTRE DE DELAY DANS UNE INTERRUPTION !</b>
             </div>
         </div>
     </div>
@@ -199,6 +268,19 @@
                 </div>
                 <ul>
                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Serial</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Exemple JS et Arduino</h2>
+                <p>
+                    Pour fonctionner, on utilsera une librairie NodeJS capable de lire le port série.
+                </p>
+                <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-testSerial.sh"></script>
             </div>
         </div>
     </div>

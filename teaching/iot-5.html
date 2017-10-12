@@ -99,7 +99,7 @@
                     <span class="code">FROM</span> : Base de l'environnement, permet de se baser sur un container existant. Voir <a href="https://hub.docker.com/explore/" target="_blank">Docker Hub</a>;<br />
                     <span class="code">RUN</span> : Éxécute une commande shell lors de la construction du container;<br />
                     <span class="code">VOLUME</span> : Fichers/Dossiers partagés entre la machine et le container;<br />
-                    <span class="code">EXPOSE</span> : Ports réseaux ouvert du container vers la machine hôte (mapping).
+                    <span class="code">EXPOSE</span> : Ports réseaux ouverts du container vers la machine hôte (mapping).
                 </p>
             </div>
         </div>
@@ -140,19 +140,19 @@
                         <b>docker build -t TAG .</b> : Construit un Dockerfile,
                     </li>
                     <li>
-                        <b>docker ps</b> : Permet de connaitre les containers lancés,
+                        <b>docker ps</b> : Permet de connaître les containers lancés,
                     </li>
                     <li>
                         <b>docker run -t -i NOM</b> : Lance un container,
                     </li>
                     <li>
-                        <b>docker rm NOM</b> : Éteint un containeur,
+                        <b>docker rm NOM</b> : Éteint un container,
                     </li>
                     <li>
-                        <b>docker images</b> : Liste les containeurs disponibles,
+                        <b>docker images</b> : Liste les containers disponibles,
                     </li>
                     <li>
-                        <b>docker rmi IMAGE</b> : Supprime une images.
+                        <b>docker rmi IMAGE</b> : Supprime une image.
                     </li>
                 </ul>
             </div>
@@ -221,11 +221,11 @@
             <div class="row">
                 <h2>Configurations</h2>
                 <p>
-                    <span class="code">environment</span> : Variables d'environnement spécifique au container<br />
+                    <span class="code">environment</span> : Variables d'environnement spécifiques au container<br />
                     <script src="https://gist.github.com/Servuc/8e9b9bc2ba5e5189e8425871c0f8db2f.js?file=docker-compose.environment.yml"></script>
                 </p>
                 <p>
-                    <span class="code">ports</span> : Ports ouvert de l'hôte depuis le container<br />
+                    <span class="code">ports</span> : Ports ouverts de l'hôte depuis le container<br />
                     <script src="https://gist.github.com/Servuc/8e9b9bc2ba5e5189e8425871c0f8db2f.js?file=docker-compose.ports.yml"></script>
                 </p>
             </div>
@@ -307,7 +307,7 @@
                     <li><span class="code">docker-compose up</span> : Met en route les Dockers, alloue les volumes;</li>
                     <li><span class="code">docker-compose start</span> : Après <span class="code">up</span> puis <b>CTRL+C</b>, relance les containers;</li>
                     <li><span class="code">docker-compose stop</span> : Arrête containers;</li>
-                    <li><span class="code">docker-compose down</span> : Supprimes les containers (MAIS PAS les volumes);</li>
+                    <li><span class="code">docker-compose down</span> : Supprime les containers (MAIS PAS les volumes);</li>
                     <li><span class="code">docker-compose logs -f</span> : Voir les logs.</li>
                 </ul>
             </div>

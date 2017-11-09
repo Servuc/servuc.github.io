@@ -57,7 +57,8 @@
                 <ul>
                     <li>Ensemble d'éléments électriques/électroniques fonctionnant ensemble</li>
                     <li>IA, IOT, Robots, ...</li>
-                    <li>Certains y voient la 4<sup>ème</sup> révolution industriel</li>
+                    <li>Certains y voient la 4<sup>ème</sup> révolution industrielle</li>
+                    <li>ZWave : Capteur vers capteurs</li>
                 </ul>
             </div>
         </div>
@@ -83,7 +84,12 @@
             <div class="row">
                 <h2>Branchement de la puce NRF24L01</h2>
                 <p>
-                    C'est <a href="nrf24l01.png" target="_blank">ici</a>, mais Attention !!! NE SURTOUT PAS BRANCHER LE 5V SUR LE NRF24L01
+                    C'est ici : <a href="uno-nrf24l01.png" target="_blank">Arduino Uno</a> ou <a href="mega-nrf24l01.png" target="_blank">Arduino Mega 2560</a><br />
+                    <b>Attention !!! 3.3V SUR LE NRF24L01</b> et <b>POUR LE MEGA :</b><br />
+                    <span class="code">
+                        #define MY_RF24_CE_PIN 49<br />
+                        #define MY_RF24_CS_PIN 53
+                    </span>
                 </p>
                 <h2>Installation de la librairie MySensors</h2>
                 <p>
@@ -99,7 +105,7 @@
             <div class="row">
                 <h2>Découverte de MySensors 2.1 <a href="https://www.mysensors.org"><i class="fa fa-external-link"></i></a> </h2>
                 <p>
-                    À partir d'ici, l'utilisation de MySensors n'est pas celle prévue, mais une version plus light.
+                    À partir d'ici, l'utilisation de MySensors n'est pas celle prévue.
                 </p>
                 <ul>
                     <li>Protocole Open Source et DIY basé sur NRF24L01</li>
@@ -117,10 +123,10 @@
                 <h2>Base de MySensors 2.1 <a href="https://www.mysensors.org/download/sensor_api_20"><i class="fa fa-external-link"></i></a> </h2>
                 4 méthodes :
                 <ul>
-                    <li><i>void setup()</i> : Méthode de l'Arduino;</li>
-                    <li><i>void presentation()</i> : Méthode pour présenter les capteurs. Appelée juste au début lorsque l'Arduino démarre;</li>
-                    <li><i>void loop()</i> : Méthode de l'Arduino;</li>
-                    <li><i>void receive(const MyMessage &message)</i> : Méthode appelée lorsqu'un message arrive</li>
+                    <li><span class="code">void setup()</span> : Méthode de l'Arduino;</li>
+                    <li><span class="code">void presentation()</span> : Méthode pour présenter les capteurs. Appelée juste au début lorsque l'Arduino démarre;</li>
+                    <li><span class="code">void loop()</span> : Méthode de l'Arduino;</li>
+                    <li><span class="code">void receive(const MyMessage &message)</span> : Méthode appelée lorsqu'un message arrive</li>
                 </ul>
             </div>
         </div>
@@ -133,25 +139,25 @@
                 <h2>MyMessage <a href="https://www.mysensors.org/download/sensor_api_20#message-constructor"><i class="fa fa-external-link"></i></a> </h2>
                 Il s'agit de la classe qui gère les messages. Un message est associé à un capteur. Un nœud contient plusieurs capteurs.
                 <ul>
-                    <li><i>MyMessage msg(CHILD_ID, TYPE) </i> : Constructeur, le type vient d'une énumération et commence par <b>V_</b>;</li>
-                    <li><i>msg.setDestination( int )</i> : Change le nœud de destination (0 par défaut, la passerelle);</li>
-                    <li><i>send( msg.set( VARIABLE ))</i> : Envoi une variable au nœud de destination.</li>
+                    <li><span class="code">MyMessage msg(CHILD_ID, TYPE) </span> : Constructeur, le type vient d'une énumération et commence par <b>V_</b>;</li>
+                    <li><span class="code">msg.setDestination( int )</span> : Change le nœud de destination;</li>
+                    <li><span class="code">send( msg.set( VARIABLE ))</span> : Envoi une variable à la dest. .</li>
                 </ul>
             </div>
         </div>
     </div>
-
+s
     <div>
         <h1 class="text-center">Pour communiquer</h1>
         <div class="slider-slide">
             <div class="row">
                 <h2>MyMessage <a href="https://github.com/mysensors/MySensors/blob/development/core/MyMessage.h"><i class="fa fa-external-link"></i></a> </h2>
                 <ul>
-                    <li><i>msg.sender</i> : ID du nœud émetteur;</li>
-                    <li><i>msg.sensor</i> : Capteur lié au message;</li>
-                    <li><i>msg.type</i> : Type du message (énum. <b>mysensor_sensor</b>/<b>mysensor_data</b>/<b>mysensor_internal</b>);</li>
-                    <li><i>mGetCommand(msg.command_ack_payload)</i> : Commande du message (énum. <b>mysensor_command</b>).</li>
-                    <li><i>msg.getString(), msg.getBool(), msg.getFloat(), msg.getInt(), ...</i></li>
+                    <li><span class="code">msg.sender</span> : ID du nœud émetteur;</li>
+                    <li><span class="code">msg.sensor</span> : Capteur lié au message;</li>
+                    <li><span class="code">msg.type</span> : Type du message (énum. <b>mysensor_sensor</b>/<b>mysensor_data</b>/<b>mysensor_internal</b>);</li>
+                    <li><span class="code">mGetCommand(msg.command_ack_payload)</span> : Commande du message (énum. <b>mysensor_command</b>).</li>
+                    <li><span class="code">msg.getString(), msg.getBool(), msg.getFloat(), msg.getInt(), ...</span></li>
                 </ul>
             </div>
         </div>
@@ -163,7 +169,7 @@
             <div class="row">
                 <h2>Détail du TP</h2>
                 <p>
-                    L'objectif ici est de créer un réseau Block-Chain très basique. Un nœud maitre (le 0) enverra à l'un des nœuds esclaves (10,11,12,13,14,15) un nœud de destination.
+                    L'objectif ici est de créer un réseau Block-Chain très basique. Un nœud maitre (le 0) enverra à l'un des nœuds esclaves (10,11,12,13,14,15,16,17) un nœud de destination.
                 </p>
                 <p>
                     Le nœud de départ devra alors s'allumer et transmettre à un nœud adjacent un message pour lui dire d'aller au nœud suivant. Ainsi de suite jusqu'au nœud final. Les Arduinos sur le passage devront s'allumer. Le message de transmission sera sur fait sur le capteur 1.
@@ -181,20 +187,22 @@
             <div class="row">
                 <h2>Détail du TP</h2>
                 <p>
-                    Par exemple, 0 envoie au nœud 14 la valeur 11 sur le capteur V_POSITION (<a href="https://www.mysensors.org/download/serial_api_20#set,-req" target="_blank">49</a>), voici un résultat possible que l'on doit obtenir :
+                    Par exemple, 0 envoie au nœud 15 la valeur 10 sur le capteur V_POSITION (<a href="https://www.mysensors.org/download/serial_api_20#set,-req" target="_blank">49</a>), voici un résultat possible que l'on doit obtenir :
                 </p>
                 <div style="text-align: center">
                     <table>
                         <tr>
-                            <td>10</td>
+                            <td bgcolor="#FF8C00">10</td>
                             <td bgcolor="#FF8C00">12</td>
                             <td bgcolor="#FF8C00">14</td>
-                            <td rowspan="0">42</td>
+                            <td>16</td>
+                            <td rowspan="0">0</td>
                         </tr>
                         <tr>
-                            <td bgcolor="#FF8C00">11</td>
-                            <td bgcolor="#FF8C00">13</td>
-                            <td>15</td>
+                            <td>11</td>
+                            <td>13</td>
+                            <td bgcolor="#FF8C00">15</td>
+                            <td>17</td>
                         </tr>
                     </table>
                 </div>

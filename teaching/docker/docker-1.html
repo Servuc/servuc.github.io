@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thomas SELLE (aka. Servuc) - Docker TP1</title>
+    <link rel="stylesheet" href="/dist/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="menu-text">Docker - TP 1 : Docker</li>
+            <li><a href="#" data-summary="history">C'est l'histoire d'un Docker</a></li>
+            <li><a href="#" data-summary="manage">Qui manipule des containers</a></li>
+            <!--
+            <li><a href="#" data-summary="next">Suite</a></li>
+            -->
+        </ul>
+    </div>
+
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li class="menu-text">Thomas SELLE (aka. Servuc)</li>
+            <li><a href="/">Servuc.fr</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="slider">
+    <div>
+        <div class="slider-slide">
+            <div class="row">
+                <h1 class="padding10">Docker - TP 1 : Docker</h1>
+                <h2>Thomas S.</h2>
+                <h3 class="pull-right">2018-2019</h3>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="summary">Docker - TP 1 : Docker</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Sommaire</h2>
+                <ul>
+                    <li>C'est l'histoire d'un Docker</li>
+                    <li>Qui manipule des containers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="history">C'est l'histoire d'un Docker</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Avant Docker <a href="https://blog.aquasec.com/a-brief-history-of-containers-from-1970s-chroot-to-docker-2016"><i class="fa fa-external-link"></i></a></h2>
+                <ul>
+                    <li>1979 : Unix V7 et chroot</li>
+                    <li>2000 : FreeBSD Jails - Utilisation partition</li>
+                    <li>2000-2013 : Virtualisation et amélioration chroot</li>
+                    <li>2013 : Docker</li>
+                    <li>2016 : C'est utile Docker !</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">C'est l'histoire d'un Docker</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>C'est quoi Docker ? <a href="https://www.infoworld.com/article/3204171/linux/what-is-docker-linux-containers-explained.html"><i class="fa fa-external-link"></i></a></h2>
+                <ul>
+                    <li>PAS de VM !</li>
+                    <li>Isolation CPU, Mémoire, I/O, Réseau</li>
+                    <li>Éviter redondance instances OS</li>
+                </ul>
+                <img src="docker-1-comparaison.svg" alt="VM, LXD, Docker comparaisons"/>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">C'est l'histoire d'un Docker</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Docker VS LXD ? <a href="https://unix.stackexchange.com/questions/254956/what-is-the-difference-between-docker-lxd-and-lxc"><i class="fa fa-external-link"></i></a></h2>
+                <ul>
+                    <li>Les 2 : Open Source, utilise LXC</li>
+                    <li>LXD :
+                        <ul>
+                            <li>Déploiement VM Linux</li>
+                            <li>(Trop ?) Proche de la machine (config CPU, Réseau, RAM)</li>
+                        </ul>
+                    </li>
+                    <li>Docker
+                        <ul>
+                            <li>Déploiement apps (Linux, Windows) (Scalabilité ++)</li>
+                            <li>Abstraction CPU, Réseau, RAM, Disque</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">C'est l'histoire d'un Docker</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Le monde de Docker</h2>
+                <ul>
+                    <li>Docker est installé la machine host</li>
+                    <li>Les apps sont dans des images</li>
+                    <li>Les instances des images sont des containers</li>
+                    <li>Une image est lié à un OS/ARCH (Exemple : Win/X86; Linux/ARMHF)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">C'est l'histoire d'un Docker</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Les outils</h2>
+                <ul>
+                    <li>Dockerfile : Définition d'une image</li>
+                    <li>docker-compose : Gestion d'instances scriptée</li>
+                    <li>Docker Swarm, Kubernetes, AWS ECS, Marathon, ... : Orchestrateur</li>
+                    <li><a href="https://hub.docker.com" target="_blank">Docker Hub <i class="fa fa-external-link"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">C'est l'histoire d'un Docker</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Exemples</h2>
+                <ul>
+                    <li>Serverless : <a href="https://github.com/openfaas/faas" target="_blank">OpenFaaS <i class="fa fa-external-link"></i></a></li>
+                    <li>CI : <a href="https://about.gitlab.com/features/gitlab-ci-cd/" target="_blank">GitLab CI</a></li>
+                    <li>Cross-compilation : <a href="https://github.com/sebastianbergmann/docker-amiga-gcc" target="_blank">Amiga GCC</a></li>
+                    <li>Wine : <a href="https://github.com/yantis/docker-wine" target="_blank">Docker Wine</a></li>
+                    <li>Monitoring : <a href="https://github.com/docker/dockercraft" target="_blank">Dockercraft</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">C'est l'histoire d'un Docker</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Plus de choses !</h2>
+                <p><a href="https://github.com/veggiemonk/awesome-docker" target="_blank">Awesome Docker<i class="fa fa-external-link"></i></a></p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="manage">Qui manipule des containers</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Installation de Docker</h2>
+                <ul>
+                    <li><a href="https://docs.docker.com/install/linux/docker-ce/debian/" target="_blank">Debian <i class="fa fa-external-link"></i></a></li>
+                    <li><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/" target="_blank">Ubuntu <i class="fa fa-external-link"></i></a></li>
+                    <li><a href="https://docs.docker.com/docker-for-mac/install/" target="_blank">Mac OS <i class="fa fa-external-link"></i></a></li>
+                    <li><a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">Windows <i class="fa fa-external-link"></i></a></li>
+                </ul>
+                <p>
+                    Test : <span class="code">docker run hello-world</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Qui manipule des containers</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <h2>Commandes</h2>
+
+                <div class="small-12 medium-6 column">
+                    <ul>
+                        <li><span class="code">docker run</span></li>
+                        <li><span class="code">docker exec</span></li>
+                        <li><span class="code">docker start</span></li>
+                        <li><span class="code">docker stop</span></li>
+                    </ul>
+                </div>
+                <div class="small-12 medium-6 column">
+                    <ul>
+                        <li><span class="code">docker rm</span></li>
+                        <li><span class="code">docker rmi</span></li>
+                        <li><span class="code">docker images</span></li>
+                        <li><span class="code">docker pull</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="slider-dots">
+    Dernière maj : Voir <a href="https://github.com/Servuc/servuc.github.io">Github</a> 🐻 <span data="now">1</span> / <span data="total"></span>
+</div>
+
+<div class="slider-button-nav-prev"><i class="fa fa-arrow-circle-left"></i> Précédent</div>
+<div class="slider-button-nav-next">Suivant <i class="fa fa-arrow-circle-right"></i></div>
+
+<script src="/dist/jquery.min.js"></script>
+<script src="/dist/foundation.min.js"></script>
+<script src="/dist/slick.min.js"></script>
+<script src="/dist/teaching.js"></script>
+</body>
+</html>

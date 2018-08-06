@@ -11,10 +11,8 @@
     <div class="top-bar-left">
         <ul class="menu">
             <li class="menu-text">Docker - TP 2 : Dockerfile</li>
-            <!--
-            <li><a href="#" data-summary="blink">Bases</a></li>
-            <li><a href="#" data-summary="next">Suite</a></li>
-            -->
+            <li><a href="#" data-summary="basic">Une image basique</a></li>
+            <li><a href="#" data-summary="perso">Très personnalisable</a></li>
         </ul>
     </div>
 
@@ -31,9 +29,11 @@
     <div>
         <div class="slider-slide">
             <div class="row">
-                <h1 class="padding10">Docker - TP 2 : Dockerfile</h1>
-                <h2>Thomas S.</h2>
-                <h3 class="pull-right">2018-2019</h3>
+                <div class="column">
+                    <h1 class="padding10">Docker - TP 2 : Dockerfile</h1>
+                    <h2>Thomas S.</h2>
+                    <h3 class="pull-right">2018-2019</h3>
+                </div>
             </div>
         </div>
     </div>
@@ -42,15 +42,196 @@
         <h1 class="text-center" data-summary="summary">Docker - TP 2 : Dockerfile</h1>
         <div class="slider-slide">
             <div class="row">
+                <div class="column">
                 <h2>Sommaire</h2>
-                <ul>
-                    <li>Un container basique</li>
-                    <li>Très personnalisable</li>
-                </ul>
+                    <ul>
+                        <li>Une image basique</li>
+                        <li>Très personnalisable</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
+    <div>
+        <h1 class="text-center">Une image basique</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Dockerf... quoi ?</h2>
+                    <ul>
+                        <li>Fichier permettant de <span class="code">build</span> un image</li>
+                        <li>Nom du fichier : <span class="code">Dockerfile</span></li>
+                        <li>Script de définition propre à Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Une image basique</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Dockerfile</h2>
+                    <div class="code">
+                        FROM debian<br />
+                        <br />
+                        RUN apt-get update -y && \<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;apt-get install -y cowsay<br />
+                        <br />
+                        CMD /usr/games/cowsay "Hello World !"
+                    </div>
+                    <div class="code">
+                        docker build -t test .<br />
+                        docker run test
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="perso">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Instructions <a href="https://docs.docker.com/engine/reference/builder/" target="_blank"><i class="fa fa-external-link"></i></a></h2>
+                    <ul>
+                        <li><span class="code">FROM</span> : Base de l'image</li>
+                        <li><span class="code">RUN</span> : Commandes requises pour mettre en place</li>
+                        <li><span class="code">CMD</span> : Ce qui doit être éxécuté</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Instructions <a href="https://docs.docker.com/engine/reference/builder/" target="_blank"><i class="fa fa-external-link"></i></a></h2>
+                    <ul>
+                        <li><span class="code">VOLUME</span> : Lié volume entre container et host</li>
+                        <li><span class="code">EXPOSE</span> : Ports ouverts du container vers l'host</li>
+                        <li><span class="code">COPY</span> <span class="code">ADD</span> : Copier des fichiers dans l'image (Diff. <a href="https://stackoverflow.com/a/24958548/2558648"><i class="fa fa-external-link"></i></a>)</li>
+                        <li><span class="code">WORKDIR</span> : Définit le chemin d'éxécution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP1</h2>
+                    <div>
+                        Faire une image <span class="code">Ubuntu Artful Aardvark</span> permettant de donner le checksum MD5 du <a href="http://proof.ovh.net/files/1Mb.dat" target="_blank">fichier suivant</a> (directement présent dans l'image).<br />
+                        Solution : 241cead4562ebf274f76f2e991750b9d
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP1</h2>
+                    <div>
+                        Faire une image <span class="code">php:apache</span> permettant d'afficher ce projet <a href="https://github.com/fatz/hello-world-php-slim" target="_blank"><b>Hello World !</b> du framework <b>Slim</b></a> sur le port 9876 de l'host.<br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Images multiples</h2>
+                    <ul>
+                        <li>Images séparé par <span class="code">FROM</span></li>
+                        <li>Utilité : Créé des images légères</li>
+                        <li>Seul la dernière image est conservée</li>
+                        <li>TL;DR : Idéal dans mise en place/compilation logiciel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Images multiples : exemple</h2>
+                    <div class="code">
+                        FROM ubuntu AS build-env
+                           //Some compilation
+                        FROM debian
+                        COPY --from=build-env /path/on/build/env.so /usr/local/lib/
+                        CMD ........
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP3</h2>
+                    <div>
+                        Faire une image Linux du projet <a href="https://github.com/aseprite/aseprite" target="_blank">Aseprite <li class="fa fa-external-link"></li></a>, compilée à partir d'une autre image Linux. Pour l'éxécuter, il faudra s'inspirer de cet article : <a href="http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/" target="_blank">Running GUI apps with Docker <li class="fa fa-external-link"></li></a>.<br />
+                        Il sera demandé de pouvoir monter le dossier <span class="code">/sprites</span> de l'image à l'éxécution du container pour pouvoir partager les documents entre l'host et le container.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Docker Hub</h2>
+                    <ul>
+                        <li>Registre pour sauvegarder ses containers</li>
+                        <li><a href="https://docs.docker.com/registry/deploying/">Version personnelle <i class="fa fa-external-link"></i></a></li>
+                        <li><span class="code">docker login</span> (Inscription <a href="https://hub.docker.com/" class="fa fa-external-link">ici</a>)</li>
+                        <li><span class="code">docker push NOM_DE_L_IMAGE</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Gitlab et intégration continue</h2>
+                    <script src="https://gist.github.com/Servuc/c98ef355d35848438c8da19d93adf979.js?file=.gitlab-ci.yml "></script>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

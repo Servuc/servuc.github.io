@@ -1,6 +1,6 @@
 .menu-text
 {
-  color: $topbar-menu-text;
+  color: $topbar-menu-text !important;
 }
 
 .present
@@ -10,11 +10,6 @@
   background: url("./SL550598-low.JPG") fixed center center;
   background-size: cover;
   padding: 10%;
-}
-
-.callout > h1
-{
-  color:black !important;
 }
 
 h1.text-center

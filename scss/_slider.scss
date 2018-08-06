@@ -95,3 +95,13 @@ body {
   color: $topbar-menu-text;
   padding:5px;
 }
+
+.code + .code {
+  margin-top:8px;
+}
+
+.spoil {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  border: 1px solid $topbar-menu-text;
+}

@@ -4,7 +4,7 @@
 
 $(document).foundation();
 
-$("a[data]").click(function(){$('html, body').animate({scrollTop: $("[data-scroll='" + $(this).attr("data") + "']").offset().top}, 2000);})
+$("a[data]").click(function(){$('html, body').animate({scrollTop: $("[data-scroll='" + $(this).attr("data") + "']").offset().top}, 2000); return false;})
 $(".fa-arrow-circle-o-up").click(function(){$('html, body').animate({scrollTop: 0}, 2000);});
 $(document).bind('scroll', function()
 {

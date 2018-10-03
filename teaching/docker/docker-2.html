@@ -178,10 +178,10 @@
                 <div class="column">
                     <h2>Images multiples : exemple</h2>
                     <div class="code">
-                        FROM ubuntu AS build-env
-                           //Some compilation
-                        FROM debian
-                        COPY --from=build-env /path/on/build/env.so /usr/local/lib/
+                        FROM ubuntu AS build-env<br />
+                           //Some compilation<br />
+                        FROM debian<br />
+                        COPY --from=build-env /path/on/build/env.so /usr/local/lib/<br /><br />
                         CMD ........
                     </div>
                 </div>

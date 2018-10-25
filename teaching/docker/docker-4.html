@@ -11,10 +11,8 @@
     <div class="top-bar-left">
         <ul class="menu">
             <li class="menu-text">Docker - TP 4 : Docker Swarm</li>
-            <!--
-            <li><a href="#" data-summary="blink">Bases</a></li>
-            <li><a href="#" data-summary="next">Suite</a></li>
-            -->
+            <li><a href="#" data-summary="ruche">Une ruche connectée</a></li>
+            <li><a href="#" data-summary="TP">TP final</a></li>
         </ul>
     </div>
 
@@ -47,7 +45,285 @@
                 <div class="column">
                     <h2>Sommaire</h2>
                     <ul>
+                        <li>Une ruche connectée</li>
+                        <li>TP final</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="ruche">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Cluster dans Docker</li>
+                        <li>Scaling</li>
+                        <li>Load balancing</li>
+                        <li>Secure by default</li>
+                        <li>Rolling updates</li>
+                        <li><a href="https://docs.docker.com/engine/swarm/#feature-highlights" target="_blank">Et plus <i class="fa fa-external-link"></i></a></li>
+                        <li><a href="https://docs.docker.com/engine/reference/commandline/node/" target="_blank">Les commandes <span class="code">docker node</span> <i class="fa fa-external-link"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Créer nœud maitre</h2>
+                    <div>
+                        <p class="code">docker swarm init --advertise-addr IP_VISIBLE</p>
+                        <p>L'éxécution donne la commande pour rejoindre le nœud, <br />Voir les nœuds :</p>
+                        <p class="code">docker node ls</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Rejoindre nœud maitre</h2>
+                    <div>
+                        <p>Obtenir les tokens pour rejoindre</p>
+                        <p class="code">docker swarm join-token worker</p>
+                        <p class="code">docker swarm join-token manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Supprimer nœud esclave</h2>
+                    <div>
+                        <p class="code">docker node rm WORKER_NAME</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Ajouter des services</h2>
+                    <div>
+                        <p>Sur le maitre :</p>
+                        <p class="code">docker service create --replicas NB_REPLICAS -p 80:80 --name INSTANCE_NAME IMAGE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Ajouter des services</h2>
+                    <div>
+                        <p>Voir les services :</p>
+                        <p class="code">docker service ls</p>
+                        <p>Voir les instances lancées :</p>
+                        <p class="code">docker service ps [INSTANCE_NAME]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Enlever les services d'un nœud</h2>
+                    <div>
+                        <p class="code">docker node update --availability drain NODE_NAME</p>
+                        <p>Pour voir si ça fonctionne : <span class="code">docker service ps INSTANCE_NAME</span></p>
+                        <p>Pour le remettre actif, mettre <span class="code">--availability active</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Mettre à jour le nombre de services</h2>
+                    <div>
+                        <p class="code">docker service scale INSTANCE_NAME=TOTAL</p>
+                        <p>Pour voir si ça fonctionne : <span class="code">docker service ls</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Enlever les services</h2>
+                    <div>
+                        <p class="code">docker service rm INSTANCE_NAME</p>
+                        <p>Pour voir si ça fonctionne : <span class="code">docker service ls</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Infos sur les nœuds</h2>
+                    <div>
+                        <p>Soi-même :</p>
+                        <p class="code">docker node inspect self</p>
+                        <p>Un autre nœud</p>
+                        <p class="code">docker node inspect NAME</p>
+                        <p>Service(s) en éxécution</p>
+                        <p class="code">docker node ps NAME</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Mise à jour progressive</h2>
+                    <div>
+                        <p class="code">docker service update --image IMAGE:TAG INSTANCE_NAME</p>
+                        <p>Pour voir si ça fonctionne : <span class="code">docker service ls</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="TP">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP1 : Une mise en bouche</h2>
+                    <p><b>NON NOTÉ ! </b>Utiliser toutes les commandes vues précédemment pour voir le résultat qu'elles produisent.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP2 : Final</h2>
+                    <img src="https://i.pinimg.com/originals/a1/92/e6/a192e6ef356010ef33a79a50f061b608.gif" alt="Perceval - C'est mortel" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP2 : Final</h2>
+                    <p><b>NOTÉ ! A faire en groupe (4 personnes max. sauf exception de ma part)</b></p>
+                    <p>Petit projet composé de deux sous projets :</p>
+                    <ul>
+                        <li>Une infrastructure Swarm avec des workers;</li>
+                        <li>Un caller qui appellera cette infrastructure.</li>
+                    </ul>
+                    <p>Prévoir deux projets Gitlab <i class="fa-gitlab"></i>(la forge) avec <i>moi</i> en collaborateur</p>
+                    <p>Voir les diapos suivantes <i class="fa fa-smile-o"></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP2 : Final - Infra Docker Swarm (1/3)</h2>
+                    <p>Votre infrastructure devra pouvoir répondre à des résolutions de hash MD5. Si la charge de travail (monitorer) devient trop importante, des containers devront être créer. Et inversement.</p>
+                    <p>Il y aura donc des serveurs en écoute (scalabilité), un container capable de changer la scalabilité, et éventuellement une base de données capable de stocker les hash réussi (Redis ?).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP2 : Final - Call (2/3)</h2>
+                    <p>Une petite appli capable d'envoyer des requètes (HTTP ou WebSocket) vers cette infra. Une petite interface utilisateur permettant de choisir des modes gentils, normals, agressifs est requise.</p>
+                    <p>Le plus, serait d'avoir le monitoring plus ou moins (5 - 10 secondes) de l'infrastructure (idem par HTTP ou WebSocket par exemple).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP2 : Requis (3/3)</h2>
+                    <ul>
+                        <li>Pas de languages de programmations obligatoires;</li>
+                        <li>Forcément du Docker Linux (pour me faciliter la tâche de correction);</li>
+                        <li>Des projets Git lisibles, complets, propres;</li>
+                        <li>Bon courage <i class="fa fa-smile-o"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP2 : Final</h2>
+                    <img src="https://66.media.tumblr.com/8d5c63636718a3176554ec0c721d5079/tumblr_o5o9xnctUB1rm6ko8o1_500.gif" alt="Bohort - Bon courage" />
                 </div>
             </div>
         </div>

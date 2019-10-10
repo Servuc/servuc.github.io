@@ -196,8 +196,8 @@
                 <div class="column">
                     <h2>TP3</h2>
                     <div>
-                        Faire une image Linux du projet <a href="https://github.com/aseprite/aseprite" target="_blank">Aseprite <li class="fa fa-external-link"></li></a>, compilée à partir d'une autre image Linux. Pour l'éxécuter, il faudra s'inspirer de cet article : <a href="http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/" target="_blank">Running GUI apps with Docker <li class="fa fa-external-link"></li></a>.<br />
-                        Il sera demandé de pouvoir monter le dossier <span class="code">/sprites</span> de l'image à l'éxécution du container pour pouvoir partager les documents entre l'host et le container.
+                        Faire une image Linux du projet <a href="https://github.com/fanux/tetris" target="_blank">Tetris <li class="fa fa-external-link"></li></a>, compilée à partir d'une autre image Linux. Pour l'éxécuter, il faudra la lancer en <span class="code">ENTRYPOINT</span> dans l'image <a href="https://hub.docker.com/_/debian?tab=tags&page=1&name=buster-slim" target="_blank">debian:buster-slim</a>.<br />
+                        Pour les plus fort, faire une compilation statique et mettre l'éxécutable dans une image <a href="https://hub.docker.com/_/busybox" target="_blank">busybox</a>.
                     </div>
                 </div>
             </div>
@@ -215,6 +215,7 @@
                         <li><a href="https://docs.docker.com/registry/deploying/">Version personnelle <i class="fa fa-external-link"></i></a></li>
                         <li><span class="code">docker login</span> (Inscription <a href="https://hub.docker.com/" class="fa fa-external-link">ici</a>)</li>
                         <li><span class="code">docker push NOM_DE_L_IMAGE</span></li>
+                        <li>Le nom de l'image devra être sous la forme : <i>pseudo/image_name:version</i></li>
                     </ul>
                 </div>
             </div>

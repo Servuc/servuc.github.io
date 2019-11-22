@@ -40,3 +40,5 @@ Ce qui explique pourquoi certains amplificateurs chauffent énormément. Leur 0v
 L'amplification que sur la partie supérieur du courant, donc très mauvais en audio, est la classe C. Si l'on gère la partie négative et positive de l'onde, on est en classe B.
 
 Plus de détails sur [Wikipédia](https://fr.wikipedia.org/wiki/Classes_de_fonctionnement_d%27un_amplificateur_%C3%A9lectronique).
+
+

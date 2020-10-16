@@ -147,7 +147,8 @@
                     <div>
                         <ul>
                             <li><b>container_name</b> <i>string</i> : Nom du container</li>
-                            <li><b>links</b> <i>array</i> : Containers liés</li>
+                            <li style="text-decoration: line-through;"><b>links</b> <i>array</i> : Containers liés</li>
+                            <li><b>networks</b> <i>array</i> : Réseaux accessibles</li>
                             <li><b>depends_on</b> <i>array</i> : Containers dépendant</li>
                             <li><b>ports</b> <i>array</i> : Ouverture vers l'host</li>
                             <li><b>environment</b> <i>array</i> : Variables d'environnement</li>
@@ -168,7 +169,7 @@
                         <ul>
                             <li><b>volumes</b> <i>array</i> : Volumes montés</li>
                             <li><b>image</b> <i>string</i> : Image disponible dans Docker Hub</li>
-                            <li><b>deploy</b> <i>object(replicas int)</i> : Replicas pour l'image</li>
+                            <li><b>deploy</b> <i>object(replicas int)</i> : Replicas pour l'image (Nécessite Swarm)</li>
                             <li><b>build</b> <i>object</i> : Fabrique l'image depuis un Dockerfile <a href="https://docs.docker.com/compose/compose-file/#build" target="_blank"><i class="fa fa-external-link"></i></a></li>
                             <li><a href="https://docs.docker.com/compose/compose-file/" target="_blank">Et bien plus encore !<i class="fa fa-external-link"></i></a></li>
                         </ul>
@@ -183,9 +184,23 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
+                    <h2>Quelques propriétés (Réseau)</h2>
+                    <div>
+                        <script src="https://gist.github.com/Servuc/f575906ce727448e6f3d5f26a151ea55.js?file=docker-compose-network.yml"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 3 : Docker-compose</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
                     <h2>TP1</h2>
                     <div>
-                        Objectif : Lancer <a href="https://hub.docker.com/r/phpmyadmin/phpmyadmin/"> PHPmyAdmin</a>..<br />
+                        Objectif : Lancer <a href="https://hub.docker.com/r/phpmyadmin/phpmyadmin/"> PHPmyAdmin</a>.<br />
                         Il vous faudra aussi une base de données Mysql (Image officielle Docker).<br />
                         Pour ceux qui trouve ce TP bien trop simple, un let's encrypt ne sera pas de trop (Demandez à M. Google).
                     </div>
@@ -220,11 +235,10 @@
                         Faire un Docker compose avec deux services :
                         <ul>
                             <li>Image 1 : Serveur qui reçoit des IP</li>
-                            <li>Image 2 : Replicas de 3 clients qui envoient leur IP</li>
+                            <li>Image 2 : Replicas de 3 clients qui envoient leur IP (Sans Swarm)</li>
                         </ul>
                         <p>
-                            Utiliser la scabilité pour mettre plus et moins d'instances <a href="https://docs.docker.com/compose/reference/scale/"><i class="fa fa-external-link"></i></a>.<br />
-                            Tout mettre sur le Gitlab de l'UFR avec moi en collaborateur.<br />
+                            Tout mettre sur le Gitlab de l'UFR, avec nom de projet : <b>IOT_2020_1_NOM_GROUPE</b> avec moi en collaborateur.<br />
                             Ne pas oublier un README.md, LICENCE.md.
                         </p>
                     </div>

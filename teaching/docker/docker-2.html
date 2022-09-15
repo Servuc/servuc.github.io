@@ -74,6 +74,21 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
+                    <h2>Tips, le .dockerignore</h2>
+
+                    <p>
+                        Fonctionne comme le <i>.gitignore</i>, permet d'éviter de prendre en compte des fichiers au <b>build</b>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Une image basique</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
                     <h2>Dockerfile</h2>
                     <div class="code">
                         FROM debian<br />
@@ -147,7 +162,8 @@
                 <div class="column">
                     <h2>TP1</h2>
                     <div>
-                        Faire une image <span class="code">php:apache</span> permettant d'afficher ce projet <a href="https://github.com/fatz/hello-world-php-slim" target="_blank"><b>Hello World !</b> du framework <b>Slim</b></a> sur le port 9876 de l'host.<br />
+                        Faire une image <span class="code">php:apache</span> permettant d'afficher ce projet <a href="https://github.com/fatz/hello-world-php-slim" target="_blank"><b>Hello World !</b> du framework <b>Slim</b></a> sur le port 9876 de l'host<br />
+                        (Attention, ça ne sert à rien d'utiliser <span class="code">-v</span>).<br />
                     </div>
                 </div>
             </div>
@@ -161,10 +177,10 @@
                 <div class="column">
                     <h2>Images multiples</h2>
                     <ul>
-                        <li>Images séparé par <span class="code">FROM</span></li>
+                        <li>Images séparées par <span class="code">FROM</span></li>
                         <li>Utilité : Créé des images légères</li>
                         <li>Seul la dernière image est conservée</li>
-                        <li>TL;DR : Idéal dans mise en place/compilation logiciel</li>
+                        <li>TL;DR : Idéal dans la mise en place/compilation logiciel</li>
                     </ul>
                 </div>
             </div>

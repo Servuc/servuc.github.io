@@ -261,21 +261,6 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>Tips, le .dockerignore</h2>
-
-                    <p>
-                        Fonctionne comme le <i>.gitignore</i>, permet d'éviter de prendre en compte des fichiers au <b>build</b>.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <h1 class="text-center">Qui manipule des containers</h1>
-        <div class="slider-slide">
-            <div class="row">
-                <div class="column">
                     <h2>Test 1</h2>
                     <p>Lancer le container <a href="https://hub.docker.com/_/httpd/" target="_blank">httpd <i class="fa fa-external-link"></i></a> en connectant le port 80 du container au port 8888 de l'host (<a href="https://docs.docker.com/engine/reference/run/" target="_blank">Doc <i class="fa fa-external-link"></i></a>)</p>
                     <button class="slider-button" onclick="$('#spoil_test_1').slideToggle();">Spoil</button>
@@ -298,6 +283,22 @@
                     <button class="slider-button" onclick="$('#spoil_test_2').slideToggle();">Spoil</button>
                     <p style="display: none" id="spoil_test_2" class="spoil">
                         <span class="code">docker images<br />docker rmi -f HTTPD_IMAGE_ID</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Qui manipule des containers</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Test 3</h2>
+                    <p>Monter un dossier (partir de la racine) sur un conteneur <i>debian</i> et l'éditer dans les deux sens (<a href="https://docs.docker.com/engine/reference/run/" target="_blank">Doc <i class="fa fa-external-link"></i></a>).</p>
+                    <button class="slider-button" onclick="$('#spoil_test_3').slideToggle();">Spoil</button>
+                    <p style="display: none" id="spoil_test_3" class="spoil">
+                        <span class="code">mkdir /tmp/host<br />docker run --rm -ti -v /tmp/host/:/tmp/container/ debian bash<br />apt update && apt install nano<br />nano /tmp/container/foo</span>
                     </p>
                 </div>
             </div>

@@ -32,7 +32,7 @@
                 <div class="column">
                     <h1 class="padding10">Docker - TP 2 : Dockerfile</h1>
                     <h2>Thomas S.</h2>
-                    <h3 class="pull-right">2018-2019</h3>
+                    <h3 class="pull-right">2018-2024</h3>
                 </div>
             </div>
         </div>
@@ -60,8 +60,9 @@
                 <div class="column">
                     <h2>Dockerf... quoi ?</h2>
                     <ul>
-                        <li>Fichier permettant de <span class="code">build</span> un image</li>
                         <li>Nom du fichier : <span class="code">Dockerfile</span></li>
+                        <li>Ou si particulier : <span class="code">particular.Dockerfile</span></li>
+                        <li>Fichier permettant de <span class="code">build</span> un image</li>
                         <li>Script de définition propre à Docker</li>
                     </ul>
                 </div>
@@ -77,8 +78,25 @@
                     <h2>Tips, le .dockerignore</h2>
 
                     <p>
-                        Fonctionne comme le <i>.gitignore</i>, permet d'éviter de prendre en compte des fichiers au <b>build</b>.
+                        Fonctionne comme le <i>.gitignore</i>, permet d'éviter de prendre en compte des fichiers au <b>build</b>.<br />
+                        Par exemple, un <i>.git</i> contenant des informations !
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center" data-summary="perso">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Instructions <a href="https://docs.docker.com/engine/reference/builder/" target="_blank"><i class="fa fa-external-link"></i></a></h2>
+                    <ul>
+                        <li><span class="code">FROM</span>: Base de l'image</li>
+                        <li><span class="code">RUN</span>: Commandes requises pour mettre en place</li>
+                        <li><span class="code">CMD</span>: Ce qui doit être éxécuté</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -100,7 +118,7 @@
                     </div>
                     <div class="code">
                         docker build -t test .<br />
-                        docker run test
+                        docker run -ti --rm test
                     </div>
                 </div>
             </div>
@@ -114,10 +132,58 @@
                 <div class="column">
                     <h2>Instructions <a href="https://docs.docker.com/engine/reference/builder/" target="_blank"><i class="fa fa-external-link"></i></a></h2>
                     <ul>
-                        <li><span class="code">FROM</span> : Base de l'image</li>
-                        <li><span class="code">RUN</span> : Commandes requises pour mettre en place</li>
-                        <li><span class="code">CMD</span> : Ce qui doit être éxécuté</li>
+                        <li><span class="code">ENTRYPOINT</span> : Commande d'entrée par défaut (image <i>Debian</i>:<span class="code">/bin/bash -c</span>).</li>
+                        <li>(<span class="code">CMD</span> contient en réalité les arguments de l'entrypoint !)</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP1</h2>
+                    <p>
+                        Utiliser l'application <i>figlet</i> en <i>entrypoint</i><a href="https://docs.docker.com/reference/dockerfile/#entrypoint" target="_blank"> <i class="fa fa-external-link"></i></a>.<br />
+                        Testez si vous avez réussi :<br /><span class="code">docker run -ti --rm mon-figlet Hello figlet world</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Un registry ?</h2>
+                    <div>
+                        <p>Un <i>registry</i> est une plateforme pour stocker/télécharger les images</p>
+                        <p>Exemple: <a href="https://hub.docker.com/" target="_blank">Docker Hub</a>, Gitlab, AWS ECR, ...</p>
+                        <p>Docker Hub: Partie <i>library</i> (officielle) et les autres</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>Docker Hub</h2>
+                    <ul>
+                        <li><span class="code">docker login</span> (Inscription <a href="https://hub.docker.com/" class="fa fa-external-link">ici</a>)</li>
+                        <li><span class="code">docker push NOM_DE_L_IMAGE</span></li>
+                        <li>Le nom de l'image devra être sous la forme : <i>pseudo/image_name:version</i></li>
+                        <li>Seules les images officielles sont sous la forme : <i>image_name:version</i></li>
+                    </ul>
+                    <h3>Envoyez votre <i>Cowsay</i> et/ou <i>Figlet</i>.</h3>
                 </div>
             </div>
         </div>
@@ -145,13 +211,14 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP1</h2>
+                    <h2>TP2</h2>
                     <div>
                         Faire une image <span class="code">Ubuntu</span> permettant de donner le <a href="https://launchpad.net/coreutils" target="_blank">checksum MD5</a> du <a href="http://proof.ovh.net/files/1Mb.dat" target="_blank">fichier suivant</a> (directement présent dans l'image).<br />
                         Solution : d5eefcccdb834958512bed157d01f3a7<br />
-                        Faire 3 variantes :
+                        Faire 4 variantes :
                         <ul>
                             <li>Avec wget (Dans un RUN du Dockerfile)</li>
+                            <li>Avec wget (Dans un CMD du Dockerfile)</li>
                             <li>Avec ADD/COPY (dans le Dockerfile)</li>
                             <li>Avec volume</li>
                         </ul>
@@ -166,10 +233,10 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP1</h2>
+                    <h2>TP3</h2>
                     <div>
-                        Faire une image <span class="code">php:apache</span> permettant d'afficher ce projet <a href="https://github.com/fatz/hello-world-php-slim" target="_blank"><b>Hello World !</b> du framework <b>Slim</b></a> sur le port 9876 de l'host<br />
-                        (Attention, ça ne sert à rien d'utiliser <span class="code">-v</span>).<br />
+                        Faire une image <span class="code">php:7.1-apache</span> permettant d'afficher ce projet <a href="https://github.com/fatz/hello-world-php-slim" target="_blank"><b>Hello World !</b> du framework <b>Slim</b></a> sur le port 9876 de l'host<br />
+                        (Attention, ça ne sert à rien d'utiliser <span class="code">-v</span>, pas besoin d'utiliser <i>composer</i>).<br />
                     </div>
                 </div>
             </div>
@@ -181,12 +248,12 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>Images multiples</h2>
+                    <h2>Images multi-stages</h2>
                     <ul>
                         <li>Images séparées par <span class="code">FROM</span></li>
                         <li>Utilité : Créé des images légères</li>
-                        <li>Seul la dernière image est conservée</li>
-                        <li>TL;DR : Idéal dans la mise en place/compilation logiciel</li>
+                        <li>Seule la dernière image est conservée</li>
+                        <li>TL;DR : Idéal dans la mise en place/compilation logiciel, livraison d'applis</li>
                     </ul>
                 </div>
             </div>
@@ -198,28 +265,13 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>Images multiples : exemple</h2>
+                    <h2>Images multi-stages : exemple</h2>
                     <div class="code">
                         FROM ubuntu AS build-env<br />
-                           //Some compilation<br />
+                        RUN npm install && node build<br />
                         FROM debian<br />
-                        COPY --from=build-env /path/on/build/env.so /usr/local/lib/<br /><br />
+                        COPY --from=build-env /path/on/build-env/ /app/<br /><br />
                         CMD ........
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <h1 class="text-center">Très personnalisable</h1>
-        <div class="slider-slide">
-            <div class="row">
-                <div class="column">
-                    <h2>TP3</h2>
-                    <div>
-                        Faire une image Linux du projet <a href="https://github.com/fanux/tetris" target="_blank">Tetris <li class="fa fa-external-link"></li></a>, compilée à partir d'une autre image Linux. Pour l'éxécuter, il faudra la lancer en <span class="code">ENTRYPOINT</span> dans l'image <a href="https://hub.docker.com/_/debian?tab=tags&page=1&name=buster-slim" target="_blank">debian:buster-slim</a>.<br />
-                        Pour les plus fort, faire une compilation statique et mettre l'éxécutable dans une image <a href="https://hub.docker.com/_/busybox" target="_blank">busybox</a>.
                     </div>
                 </div>
             </div>
@@ -233,8 +285,10 @@
                 <div class="column">
                     <h2>TP4</h2>
                     <div>
-                        Faire une image avec un serveur web. Cette application web doit être modifiable en live. L'objectif est de changer le temps de réponse d'une page pour mettre en avant le <a href="https://docs.docker.com/engine/reference/builder/#healthcheck" target="_blank"><span class="code">HEALTHCHECK</span><li class="fa fa-external-link"></li></a>.<br />
-                        À l'exécution, il faudra choisir la bonne politique de redémarrage <a href="https://docs.docker.com/engine/reference/run/#restart-policies---restart" target="_blank"><span class="code">--restart</span><li class="fa fa-external-link"></li></a>.
+                        <h3>1ère étape</h3>
+                        <p>Faire une image affichant ce projet <a href="https://github.com/sambaiz/react-webpack-helloworld" target="_blank">React</a> (base <i>node</i> ?).</p>
+                        <h3>2nde étape</h3>
+                        <p>Faire une image multi-stages, avec Apache, affichant le projet précédent minifié.</p>
                     </div>
                 </div>
             </div>
@@ -246,14 +300,27 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>Docker Hub</h2>
-                    <ul>
-                        <li>Registre pour sauvegarder ses containers</li>
-                        <li><a href="https://docs.docker.com/registry/deploying/">Version personnelle <i class="fa fa-external-link"></i></a></li>
-                        <li><span class="code">docker login</span> (Inscription <a href="https://hub.docker.com/" class="fa fa-external-link">ici</a>)</li>
-                        <li><span class="code">docker push NOM_DE_L_IMAGE</span></li>
-                        <li>Le nom de l'image devra être sous la forme : <i>pseudo/image_name:version</i></li>
-                    </ul>
+                    <h2>TP5 - À préparer - Pour Docker Compose !!!</h2>
+                    <div>
+                        Faire une image avec un serveur web (PHP, Node, ...). Cette application web doit être modifiable en live. L'objectif est de changer le temps de réponse/le status HTTP d'une page pour mettre en avant le <a href="https://docs.docker.com/engine/reference/builder/#healthcheck" target="_blank"><span class="code">HEALTHCHECK</span><li class="fa fa-external-link"></li></a>.<br />
+                        À l'exécution, il faudra choisir la bonne politique de redémarrage <a href="https://docs.docker.com/engine/reference/run/#restart-policies---restart" target="_blank"><span class="code">--restart</span><li class="fa fa-external-link"></li></a>.
+                    </div>
+                    <div>Dans le cas d'un <i>docker-compose</i>, il faudra utiliser un outil du type <a href="https://hub.docker.com/r/willfarrell/autoheal/" target="_blank">AutoHeal</a>.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Très personnalisable</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP6 - Bonus</h2>
+                    <div>
+                        Faire une image Linux du projet <a href="https://github.com/fanux/tetris" target="_blank">Tetris <li class="fa fa-external-link"></li></a>, compilée à partir d'une autre image Linux. Pour l'éxécuter, il faudra la lancer en <span class="code">ENTRYPOINT</span> dans l'image <a href="https://hub.docker.com/_/debian?tab=tags&page=1&name=buster-slim" target="_blank">debian:buster-slim</a>.<br />
+                        Pour les plus forts, faire une compilation statique et mettre l'exécutable dans une image <a href="https://hub.docker.com/_/busybox" target="_blank">busybox</a>.
+                    </div>
                 </div>
             </div>
         </div>

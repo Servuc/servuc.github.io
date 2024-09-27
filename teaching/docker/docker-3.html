@@ -31,7 +31,7 @@
                 <div class="column">
                     <h1 class="padding10">Docker - TP 3 : Docker-compose</h1>
                     <h2>Thomas S.</h2>
-                    <h3 class="pull-right">2018-2019</h3>
+                    <h3 class="pull-right">2018-2024</h3>
                 </div>
             </div>
         </div>
@@ -86,7 +86,8 @@
             <div class="row">
                 <div class="column">
                     <h2>Installation</h2>
-                    C'est <a href="https://docs.docker.com/compose/install/#install-compose" target="_blank">ici <i class="fa fa-external-link"></i></a><br />
+                    C'est <a href="https://docs.docker.com/compose/install/#install-compose" target="_blank">ici <i class="fa fa-external-link"></i></a>
+                    si la commande <span class="code">docker compose</span> ne fonctionne pas !<br />
                     <img src="https://img.devrant.com/devrant/rant/r_726139_miRRV.jpg" alt="RTFM"><br />
                     <a href="https://devrant.com/rants/726139/while-most-people-want-the-force-to-get-stuff-like-a-tv-remote-i-want-to-use-it">Image source</a>
                 </div>
@@ -101,7 +102,7 @@
                 <div class="column">
                     <h2>Usage</h2>
                     <p>
-                        <span class="code">docker-compose COMMAND options</span><br />Dans le dossier avec le <span class="code">docker-compose.yml</span>
+                        <span class="code">docker compose COMMAND options</span><br />Dans le dossier avec le <span class="code">docker-compose.yml</span>
                     </p>
                     <div class="row">
                         <div class="small-12 medium-6 column">
@@ -147,11 +148,11 @@
                     <div>
                         <ul>
                             <li><b>container_name</b> <i>string</i> : Nom du container</li>
+                            <li><b>image</b> <i>string</i> : Image disponible dans Docker Hub</li>
                             <li style="text-decoration: line-through;"><b>links</b> <i>array</i> : Containers liés</li>
                             <li><b>networks</b> <i>array</i> : Réseaux accessibles</li>
                             <li><b>depends_on</b> <i>array</i> : Containers dépendant</li>
                             <li><b>ports</b> <i>array</i> : Ouverture vers l'host</li>
-                            <li><b>environment</b> <i>array</i> : Variables d'environnement</li>
                         </ul>
                     </div>
                 </div>
@@ -167,8 +168,9 @@
                     <h2>Quelques propriétés</h2>
                     <div>
                         <ul>
+                            <li><b>environment</b> <i>array</i> : Variables d'environnement</li>
+                            <li><b>env_file</b> <i>array</i> : Idem, mais dans des fichiers</li>
                             <li><b>volumes</b> <i>array</i> : Volumes montés</li>
-                            <li><b>image</b> <i>string</i> : Image disponible dans Docker Hub</li>
                             <li><b>deploy</b> <i>object(replicas int)</i> : Replicas pour l'image (Nécessite Swarm)</li>
                             <li><b>build</b> <i>object</i> : Fabrique l'image depuis un Dockerfile <a href="https://docs.docker.com/compose/compose-file/#build" target="_blank"><i class="fa fa-external-link"></i></a></li>
                             <li><a href="https://docs.docker.com/compose/compose-file/" target="_blank">Et bien plus encore !<i class="fa fa-external-link"></i></a></li>
@@ -198,11 +200,10 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP1</h2>
+                    <h2>TP1 - Réutilisation</h2>
                     <div>
                         Objectif : Lancer <a href="https://hub.docker.com/r/phpmyadmin/phpmyadmin/"> PHPmyAdmin</a>.<br />
-                        Il vous faudra aussi une base de données Mysql (Image officielle Docker).<br />
-                        Pour ceux qui trouve ce TP bien trop simple, un let's encrypt ne sera pas de trop (Demandez à M. Google).
+                        Il vous faudra aussi une base de données Mysql (Image officielle Docker).
                     </div>
                 </div>
             </div>
@@ -214,7 +215,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP1</h2>
+                    <h2>TP1 - Réutilisation</h2>
                     <div>
                         <a href="https://gist.github.com/Servuc/ef3f40130a404847ad2c16ed8887530d">SPOIL <i class="fa fa-external-link"></i></a>
                         <img src="http://static.hitek.fr/img/actualite/2016/05/27/spoilers.jpg" alt="Spoiler, Spoiler everywhere"/>
@@ -230,17 +231,10 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP2</h2>
+                    <h2>TP2 - Build depuis 0</h2>
                     <div>
-                        Faire un Docker compose avec deux services :
-                        <ul>
-                            <li>Image 1 : Serveur qui reçoit des IP</li>
-                            <li>Image 2 : Replicas de 3 clients qui envoient leur IP (Sans Swarm)</li>
-                        </ul>
-                        <p>
-                            Tout mettre sur le Gitlab de l'UFR, avec nom de projet : <b>IOT_2020_1_NOM_GROUPE</b> avec moi en collaborateur.<br />
-                            Ne pas oublier un README.md, LICENCE.md.
-                        </p>
+                        Objectif : Reprendre <i>Cowsay</i> et <i>Figlet</i> du précédent TP.<br />
+                        Faire un <i>build</i> des deux images et voir le résultat avec <span class="code">docker compose up</span>.
                     </div>
                 </div>
             </div>
@@ -252,13 +246,46 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP2</h2>
+                    <h2>TP3 - Le réseau sans Docker Swarm</h2>
+                    <div>
+                        Faire un Docker compose avec deux services :
+                        <ul>
+                            <li>Image 1 : Serveur qui reçoit des IP (serveur HTTP 😉)</li>
+                            <li>Image 2 : Replicas de 3 clients qui envoient une requête (Sans Swarm)<br />Les IPs seront dans les logs de l'image 1.</li>
+                        </ul>
+                        <p>PS: A mettre de côté pour le prochain TP Docker Swarm !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 3 : Docker-compose</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP4 - Build et réutilisation</h2>
                     <div>
                         Faire un <span class="code">docker-compose.yml</span> avec deux services :
                         <ul>
                             <li>Image 1 : Un build d'image du projet <a href="https://github.com/seanaharrison/node-express-mongodb-example" target="_blank">Node <i class="fa fa-external-link"></i></a>. Il faudra faire un Git clone et modifier la chaine de connexion à la base de donnée (<span class="code">app.js</span>) avec la commande <span class="code">sed</span>. L'application écoute les requêtes HTTP sur le port 3000</li>
                             <li>Image 2 : Une base de données MongoDB en version <i>3.0.4</i>. Les données du MongoDB doivent être stockés dans un volume sur votre disque.</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 3 : Docker-compose</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP5 - À faire plus tard</h2>
+                    <div>
+                        Reprendre le <a href="https://pigne.org/teaching/webdev2/lab/WebFrameworksLab" target="_blank">TP <i>Lab - Frameworks coté Serveur</i></a> de M. Pigne, et y écrire le Docker Compose associé.
                     </div>
                 </div>
             </div>

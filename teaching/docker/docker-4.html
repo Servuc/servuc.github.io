@@ -239,7 +239,8 @@
                     <h2>TP1 : Une mise en bouche</h2>
                     <p><b>NON NOTÉ ! </b>Utiliser toutes les commandes vues précédemment pour voir le résultat qu'elles produisent.</p>
                     <p>Afin de facilité le travail, on va mettre en place un <i>nginx</i> pour commencer.</p>
-                    <p>Ensuite, tenter avec une application web qui affiche une IP par exemple.</p>
+                    <p>Ensuite, utiliser <i>curl</i> pour envoyer l'IP du client à <i>nginx</i>.</p>
+                    <p><i>PS: Une simple vision des logs suffit à vérifier que ça fonctionne</i></p>
                 </div>
             </div>
         </div>
@@ -250,19 +251,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP2 : Une mise en application plus concrète</h2>
-                    <p><b>NON NOTÉ ! </b>Reprendre le TP (Celui sur les IPs du cours précédent) et utiliser la scalabilité pour faire apparaitre les IPs.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <h1 class="text-center" data-summary="TP">Docker - TP 4 : Docker Swarm</h1>
-        <div class="slider-slide">
-            <div class="row">
-                <div class="column">
-                    <h2>TP3 : Utilisation du HealthCheck</h2>
+                    <h2>TP2 : Utilisation du HealthCheck</h2>
                     <p><b>NON NOTÉ ! </b>Reprendre le cours sur le <a href="/teaching/docker/docker-2.html" target="_blank">Dockerfile</a>, et utiliser la propriété <span class="code">HEALTHCHECK</span> (cf. Vers la fin).</p>
                 </div>
             </div>
@@ -274,7 +263,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP4 : Final</h2>
+                    <h2>TP3 : Final</h2>
                     <img src="https://i.pinimg.com/originals/a1/92/e6/a192e6ef356010ef33a79a50f061b608.gif" alt="Perceval - C'est mortel" />
                 </div>
             </div>
@@ -286,7 +275,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP4 : Final</h2>
+                    <h2>TP3 : Final</h2>
                     <p><b>NOTÉ ! A faire en groupe (2 personnes max. sauf exception de ma part)</b></p>
                     <p>Petit projet composé de deux sous projets :</p>
                     <ul>
@@ -305,7 +294,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP4 : Final - Infra Docker Swarm (1/4)</h2>
+                    <h2>TP3 : Final - Infra Docker Swarm (1/5)</h2>
                     <p>Votre infrastructure devra pouvoir répondre à des résolutions de hash <a href="https://fr.wikipedia.org/wiki/MD5" target="_blank">MD5</a>. Si la charge de travail (monitorer) devient trop importante, des containers devront être créer. Et inversement.</p>
                     <p>Il y aura donc des serveurs en écoute (scalabilité), un container capable de changer la scalabilité, et éventuellement une base de données capable de stocker les hash réussi (Redis ?).</p>
                 </div>
@@ -318,7 +307,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP4 : Final - Infra Docker Swarm (2/4)</h2>
+                    <h2>TP3 : Final - Infra Docker Swarm (2/5)</h2>
                     <img alt="Scheme" src="docker-4-md5-archi.svg" />
                 </div>
             </div>
@@ -330,10 +319,10 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP4 : Final - Call (3/4)</h2>
-                    <p>Une petite appli capable d'envoyer des requètes (HTTP ou WebSocket) vers cette infra. Une petite interface utilisateur permettant de choisir des modes gentils, normals, agressifs est requise.</p>
+                    <h2>TP3 : Final - Caller (3/5)</h2>
+                    <p>Une petite appli (web ou desktop - en plus) capable d'envoyer des requètes (HTTP ou WebSocket) vers cette infra. Une petite interface utilisateur permettant de choisir des modes gentils, normals, agressifs (change l'envoie d'un hash aléatoire auto toutes les X secondes) est requise.</p>
                     <p>Le plus, serait d'avoir le monitoring plus ou moins (5 - 10 secondes) de l'infrastructure (idem par HTTP ou WebSocket par exemple).</p>
-                    <p>Comment accède-t-on à Docker dans un container ? Avec <a href="https://hub.docker.com/_/docker" target="_blank">cette image (docker:dind)<i class="fa fa-external-link"></i></a>.</p>
+                    <p>Comment accède-t-on à Docker dans un container ? Avec <a href="https://hub.docker.com/_/docker" target="_blank">cette image (docker:dind)<i class="fa fa-external-link"></i></a> ou se connecter à la socket.</p>
                     <p>L'esclave pour gagner du temps : <a href="https://hub.docker.com/r/servuc/hash_extractor" target="_blank">Docker hub<i class="fa fa-external-link"></i></a></p>
                 </div>
             </div>
@@ -345,11 +334,28 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP4 : Requis (4/4)</h2>
+                    <h2>TP3 : Requis (4/5)</h2>
                     <ul>
-                        <li>Pas de languages de programmations obligatoires;</li>
+                        <li>Pas de languages de programmations/technos obligatoires;</li>
                         <li>Forcément du Docker Linux (pour me faciliter la tâche de correction 😄);</li>
-                        <li>Des projets Git lisibles, complets, propres;</li>
+                        <li>Des projets Git lisibles, complets (readme, licence, ...), propres, avec MR/PR </li>
+                        <li>L'appli front: Un peu travaillée si possible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP3 : Requis (4/5)</h2>
+                    <ul>
+                        <li>Intégration continue pour build le ou les images Docker (si possible pousser vers un registry)</li>
+                        <li>Un exemple d'au moins un test unitaire en CI (mettre le badge de % dans le README)</li>
+                        <li>CI: Ajouter un linter (facultatif)</li>
                         <li>Bon courage <i class="fa fa-smile-o"></i></li>
                     </ul>
                 </div>
@@ -362,7 +368,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP4 : Final</h2>
+                    <h2>TP3 : Final</h2>
                     <img src="https://66.media.tumblr.com/8d5c63636718a3176554ec0c721d5079/tumblr_o5o9xnctUB1rm6ko8o1_500.gif" alt="Bohort - Bon courage" />
                 </div>
             </div>

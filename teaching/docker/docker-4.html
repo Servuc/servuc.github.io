@@ -311,7 +311,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP3 : Final - Infra Docker Swarm (1/5)</h2>
+                    <h2>TP3 : Final - Infra Docker Swarm (1/6)</h2>
                     <p>Votre infrastructure devra pouvoir répondre à des résolutions de hash <a href="https://fr.wikipedia.org/wiki/MD5" target="_blank">MD5</a>. Si la charge de travail (monitorer) devient trop importante, des containers devront être créer. Et inversement.</p>
                     <p>Il y aura donc des serveurs en écoute (scalabilité), un container capable de changer la scalabilité, et éventuellement une base de données capable de stocker les hash réussi (Redis ?).</p>
                 </div>
@@ -324,7 +324,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP3 : Final - Infra Docker Swarm (2/5)</h2>
+                    <h2>TP3 : Final - Infra Docker Swarm (2/6)</h2>
                     <img alt="Scheme" src="docker-4-md5-archi.svg" />
                 </div>
             </div>
@@ -336,11 +336,12 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP3 : Final - Caller (3/5)</h2>
+                    <h2>TP3 : Final - Caller (3/6)</h2>
                     <p>Une petite appli (web ou desktop - en plus) capable d'envoyer des requètes (HTTP ou WebSocket) vers cette infra. Une petite interface utilisateur permettant de choisir des modes gentils, normals, agressifs (change l'envoie d'un hash aléatoire auto toutes les X secondes) est requise.</p>
                     <p>Le plus, serait d'avoir le monitoring plus ou moins (5 - 10 secondes) de l'infrastructure (idem par HTTP ou WebSocket par exemple).</p>
                     <p>Comment accède-t-on à Docker dans un container ? Avec <a href="https://hub.docker.com/_/docker" target="_blank">cette image (docker:dind)<i class="fa fa-external-link"></i></a> ou se connecter à la socket.</p>
                     <p>L'esclave pour gagner du temps : <a href="https://hub.docker.com/r/servuc/hash_extractor" target="_blank">Docker hub<i class="fa fa-external-link"></i></a></p>
+                    <p>L'ensemble des caractères est : <i>a ⟶ z A ⟶ Z 0 ⟶ 9</i></p>
                 </div>
             </div>
         </div>
@@ -351,11 +352,31 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP3 : Requis (4/5)</h2>
+                    <h2>TP3 : App - Dude (4/6)</h2>
+                    <p>L'appli doit permettre:</p>
+                    <ul>
+                        <li>Envoyer des MD5 à la main pour le bruteforcer</li>
+                        <li>Envoyer des MD5 automatiquement (délais entre chaque envoi personnalisable - stepper)</li>
+                        <li>Visualiser le résultat d'un bruteforce</li>
+                        <li>Visualiser l'état du cluster <i>Docker Swarm</i></li>
+                        <li>Optionnel: Table de connaissance des hashs déjà brisés</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center">Docker - TP 4 : Docker Swarm</h1>
+        <div class="slider-slide">
+            <div class="row">
+                <div class="column">
+                    <h2>TP3 : Requis (5/6)</h2>
                     <ul>
                         <li>Pas de languages de programmations/technos obligatoires;</li>
                         <li>Forcément du Docker Linux (pour me faciliter la tâche de correction 😄);</li>
                         <li>Des projets Git lisibles, complets (readme, licence, ...), propres, avec MR/PR </li>
+                        <li>Git: Issues et MR/PR</li>
                         <li>L'appli front: Un peu travaillée si possible</li>
                     </ul>
                 </div>
@@ -368,7 +389,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>TP3 : Requis (4/5)</h2>
+                    <h2>TP3 : Requis (6/6)</h2>
                     <ul>
                         <li>Intégration continue pour build le ou les images Docker (si possible pousser vers un registry)</li>
                         <li>Un exemple d'au moins un test unitaire en CI (mettre le badge de % dans le README)</li>

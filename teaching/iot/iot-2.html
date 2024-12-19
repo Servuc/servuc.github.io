@@ -41,7 +41,7 @@
                 <div class="column">
                     <h1 class="padding10">IOT - TP 1 : L'environnement Arduino</h1>
                     <h2>Thomas S.</h2>
-                    <h3 class="pull-right">2016-2019</h3>
+                    <h3 class="pull-right">2016-2024</h3>
                 </div>
             </div>
         </div>
@@ -210,7 +210,11 @@
                 <div class="column">
                     <h2>Interrupteur</h2>
                     <p>
-                        Allumer une LED quand l'interrupteur est appuyé
+                        <span class="code">bool isOn = digitalRead( pin );</span> : Permet de lire une valeur numérique sur une pinoche.
+                    </p>
+                    <p>
+                        Objectif: Allumer la LED 13 si l'interrupteur est appuyé. Mettre un <span>delay(2500);</span> dans le loop.<br />
+                        On voit que l'on doit rester appuyé sur l'interrupteur 2.5s.
                     </p>
                 </div>
             </div>
@@ -223,19 +227,7 @@
             <div class="row">
                 <div class="column">
                     <h2>Exemple Arduino</h2>
-                    <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-serial.ino"></script>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <h1 class="text-center">Serial + Interrupteur</h1>
-        <div class="slider-slide">
-            <div class="row">
-                <div class="column">
-                    <h2>Exemple Arduino</h2>
-                    Objectif: Afficher un message sur le port série quand vous appuyez sur le bouton, et ensuite allumer une LED quand vous appuyez sur le bouton.
+                    <script src="https://gist.github.com/Servuc/1315dc4c8af8e53632cf36efd0226bb2.js?file=Interrupteur.ino"></script>
                 </div>
             </div>
         </div>
@@ -248,10 +240,9 @@
                 <div class="column">
                     <h2>Blink et interruption</h2>
                     <p>
-                        Nécessite une LED et un interrupteur.<br />
+                        Nécessite la 13 et un interrupteur.<br />
                         <b>Objectif</b> : Allumer la LED 1 seconde après avoir interrompu le programme. (Voir diapo suivantes).
                         <img src="blink-4.svg" />
-
                     </p>
                 </div>
             </div>
@@ -264,6 +255,7 @@
             <div class="row">
                 <div class="column">
                     <h2>Blink et interruption</h2>
+                    <p>L'interruption mais en pause la fonction <span class="code">loop()</span>. Elle doit être très courte.</p>
                     <p>
                         <span class="code">attachInterrupt(digitalPinToInterrupt( pin ), fonction, type );</span>
                         <ul>
@@ -272,7 +264,7 @@
                             <li><b>type</b> : <span class="code">HIGH</span>, <span class="code">LOW</span>, <span class="code">RISING</span> ou <span class="code">FALLING</span></li>
                         </ul>
                     </p>
-                    <b>NE PAS METTRE DE DELAY DANS UNE INTERRUPTION !</b>
+                    <p>Une fonction partagée entre l'interruption et le reste doit être déclarée <span class="code">volatile</span>, exemple <span class="code">volatile bool isPressed;</span></p>
                 </div>
             </div>
         </div>
@@ -300,9 +292,11 @@
                         Débugger, il faut utiliser 2 méthodes (au moins) :
                         <ul>
                             <li><i>Dans le setup : </i><span class="code">Serial.begin( 9600 );</span></li>
-                    <li><i>Où vous voulez : </i><span class="code">Serial.print( VAR ); Serial.println( VAR )</span><br /><i class="code">VAR</i> est un "texte" ou une variable.</li>
+                            <li><i>Où vous voulez : </i><span class="code">Serial.print( VAR ); Serial.println( VAR )</span>
+                            <br /><i class="code">VAR</i> est un "texte" ou une variable.</li>
                         </ul>
                     </p>
+                    <p>Dans l'IDE Arduino, vous avez en haut à droite: Le monitor et serial plotter.</p>
                 </div>
             </div>
         </div>
@@ -383,7 +377,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>Lecture d'une valeur analog</h2>
+                    <h2>Lecture d'une valeur analogue</h2>
                     <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-analogSensor.ino"></script>
                 </div>
             </div>
@@ -395,9 +389,12 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>LEDtris (1/2) - Énoncé</h2>
-                    <p>Avec la matrice de LED, faire un mini Tetris. Attention, on ne peut pas tout allumer d'un coup. Une ligne = 10pts, 2 = 25pts, 3 = 60pts, 4 = 125pts. Le capteur de luminosité pourra accélérer le jeu en étant recouvert.</p>
-                    <p>Le score devra être affiché dans un terminal.</p>
+                    <h2>Juste à temps ! (1/2)</h2>
+                    <p>Avec l'écran 7 segments de 4 chiffres faire un compteur de temps, objectif, appuyé sur l'interrupteur au bon moment.</p>
+                    <p>Ajouter des LEDs pour indiquer la réussite du joueur ou non.</p>
+                    <p>Envoyer des infos sur le port série.</p>
+                    <p>Lire les données sur le port série de l'ordinateur.</p>
+                    <p>Faire une petite IHM (page web, soft, ...) pour rendre le résultat plus sympa.</p>
                 </div>
             </div>
         </div>
@@ -408,7 +405,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>LEDtris (2/2) - Règles</h2>
+                    <h2>Juste à temps ! (2/2) - Règles</h2>
                     <p>Faire un projet sur la forge, me rajouter en tant que membres. Mettre un schéma (Thinkercad), un README et le code source.</p>
                     <p>NE PAS APPELER LE PROJET <b>docker_iot_... .</b></p>
                 </div>

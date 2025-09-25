@@ -32,7 +32,7 @@
                 <div class="column">
                     <h1 class="padding10">Docker - TP 2 : Dockerfile</h1>
                     <h2>Thomas S.</h2>
-                    <h3 class="pull-right">2018-2024</h3>
+                    <h3 class="pull-right">2018-2026</h3>
                 </div>
             </div>
         </div>
@@ -135,6 +135,10 @@
                         <li><span class="code">ENTRYPOINT</span> : Commande d'entrée par défaut (image <i>Debian</i>:<span class="code">/bin/bash -c</span>).</li>
                         <li>(<span class="code">CMD</span> contient en réalité les arguments de l'entrypoint !)</li>
                     </ul>
+                    <ul>
+                        <li>Global: <span class="code">./ENTRYPOINT CMD</span></li>
+                        <li>Exemple <span class="code">docker run -ti debian echo "Test"</span>: <span class="code">/bin/bash -c echo "Test"</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -147,7 +151,7 @@
                 <div class="column">
                     <h2>TP1</h2>
                     <p>
-                        Utiliser l'application <i>figlet</i> en <i>entrypoint</i><a href="https://docs.docker.com/reference/dockerfile/#entrypoint" target="_blank"> <i class="fa fa-external-link"></i></a>.<br />
+                        Utiliser l'application <i>figlet</i> (affiche un texte) en <i>entrypoint</i><a href="https://docs.docker.com/reference/dockerfile/#entrypoint" target="_blank"> <i class="fa fa-external-link"></i></a>.<br />
                         Testez si vous avez réussi :<br /><span class="code">docker run -ti --rm mon-figlet Hello figlet world</span>
                     </p>
                 </div>
@@ -162,9 +166,14 @@
                 <div class="column">
                     <h2>Un registry ?</h2>
                     <div>
-                        <p>Un <i>registry</i> est une plateforme pour stocker/télécharger les images</p>
+                        <p>Un <i>registry</i> est une plateforme pour stocker/télécharger les images.</p>
                         <p>Exemple: <a href="https://hub.docker.com/" target="_blank">Docker Hub</a>, Gitlab, AWS ECR, ...</p>
-                        <p>Docker Hub: Partie <i>library</i> (officielle) et les autres</p>
+                        <p>Docker Hub: Partie <i>library</i> (officielle) et les autres:
+                            <ul>
+                                <li>Officielles: <i>debian</i>, <i>nginx</i>, <i>mongo</i>, <i>alpine</i>, ...</li>
+                                <li>Autres: <i>grafana/grafana</i>, <i>you/your_image</i>, <i>bitnami/redis</i>, ...</li>
+                            </ul>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -196,9 +205,9 @@
                 <div class="column">
                     <h2>Instructions <a href="https://docs.docker.com/engine/reference/builder/" target="_blank"><i class="fa fa-external-link"></i></a></h2>
                     <ul>
-                        <li><span class="code">VOLUME</span> : Lié volume entre container et host</li>
-                        <li><span class="code">EXPOSE</span> : Ports ouverts du container vers l'host</li>
-                        <li><span class="code">COPY</span> <span class="code">ADD</span> : Copier des fichiers dans l'image (Diff. <a href="https://stackoverflow.com/a/24958548/2558648"><i class="fa fa-external-link"></i></a>)</li>
+                        <li><span class="code">VOLUME</span> (facultatif) : Lié volume entre container et host</li>
+                        <li><span class="code">EXPOSE</span> (facultatif) : Ports ouverts du container vers l'host</li>
+                        <li><span class="code">COPY</span> / <span class="code">ADD</span> : Copier des fichiers dans l'image (Diff. <a href="https://stackoverflow.com/a/24958548/2558648"><i class="fa fa-external-link"></i></a>)</li>
                         <li><span class="code">WORKDIR</span> : Définit le chemin d'éxécution</li>
                     </ul>
                 </div>

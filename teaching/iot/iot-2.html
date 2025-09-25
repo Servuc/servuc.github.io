@@ -41,7 +41,7 @@
                 <div class="column">
                     <h1 class="padding10">IOT - TP 1 : L'environnement Arduino</h1>
                     <h2>Thomas S.</h2>
-                    <h3 class="pull-right">2016-2024</h3>
+                    <h3 class="pull-right">2016-2026</h3>
                 </div>
             </div>
         </div>
@@ -55,6 +55,7 @@
                     <h2>Sommaire</h2>
                     <ul>
                         <li>Blink</li>
+                        <li>Interrupteur</li>
                         <li>Interruption</li>
                         <li>Serial</li>
                     </ul>
@@ -87,7 +88,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>Faire clignoter la LED du PIN 13</h2>
+                    <h2>Faire clignoter la LED du PIN 13 (Utiliser la macro <span class="code">LED_BUILTIN</span>)</h2>
                     <p>Zéro branchement <i class="fa fa-smile-o"></i></p>
                     <p>
                         Fonctions :
@@ -107,7 +108,7 @@
         <div class="slider-slide">
             <div class="row">
                 <div class="column">
-                    <h2>Faire clignoter la LED du PIN 13</h2>
+                    <h2>Faire clignoter la LED du PIN 13 (Utiliser la macro <span class="code">LED_BUILTIN</span>)</h2>
                     <script src="https://gist.github.com/Servuc/089b416923b6796aa0251a9503b39edb.js?file=teaching2-blink1.ino"></script>
                 </div>
             </div>
@@ -120,7 +121,19 @@
             <div class="row">
                 <div class="column">
                     <h2>Faire clignoter une LED sur un autre pin</h2>
-                    <img src="blink-1.svg" />
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="max-width: 50%; display: flex; justify-content: center;">
+                            <img src="blink-1.svg"/>
+                        </div>
+                        <div style="max-width: 50%; display: flex; justify-content: center;">
+                            <div>
+                                <div>
+                                    <span style="color:orangered">FAIL 🤬</span> / <span style="color:green">WORK 😃</span>
+                                </div>
+                                <img src="breadboard.png" style="transform-origin: top left; transform: scale(0.5);"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,8 +226,9 @@
                         <span class="code">bool isOn = digitalRead( pin );</span> : Permet de lire une valeur numérique sur une pinoche.
                     </p>
                     <p>
-                        Objectif: Allumer la LED 13 si l'interrupteur est appuyé. Mettre un <span>delay(2500);</span> dans le loop.<br />
-                        On voit que l'on doit rester appuyé sur l'interrupteur 2.5s.
+                        Objectif: Allumer la LED 13 si l'interrupteur est appuyé. <br />
+                        Mettre un <span>delay(2500);</span> dans le loop.<br />
+                        <b>Utiliser le code la slide suivante</b>, que constate-t-on ?
                     </p>
                 </div>
             </div>
@@ -293,7 +307,7 @@
                         <ul>
                             <li><i>Dans le setup : </i><span class="code">Serial.begin( 9600 );</span></li>
                             <li><i>Où vous voulez : </i><span class="code">Serial.print( VAR ); Serial.println( VAR )</span>
-                            <br /><i class="code">VAR</i> est un "texte" ou une variable.</li>
+                            <li><i>Ou : </i><span class="code">Serial.print("X:"); Serial.print(x);Serial.print(",Y:"); Serial.println(y);</span></li>
                         </ul>
                     </p>
                     <p>Dans l'IDE Arduino, vous avez en haut à droite: Le monitor et serial plotter.</p>

@@ -300,7 +300,7 @@
             <div class="row">
                 <div class="column">
                     <h2>Test 3</h2>
-                    <p>Monter un dossier (partir de la racine) sur un conteneur <i>debian</i> et l'éditer dans les deux sens (<a href="https://docs.docker.com/engine/reference/run/" target="_blank">Doc <i class="fa fa-external-link"></i></a> - .cf <i>-p</i>).</p>
+                    <p>Monter un dossier (partir de la racine) sur un conteneur <i>debian</i> et l'éditer dans les deux sens (<a href="https://docs.docker.com/engine/reference/run/" target="_blank">Doc <i class="fa fa-external-link"></i></a> - .cf <i>-v</i>).</p>
                     <button class="slider-button" onclick="$('#spoil_test_3').slideToggle();">Spoil</button>
                     <p style="display: none" id="spoil_test_3" class="spoil">
                         <span class="code">mkdir /tmp/host<br />docker run --rm -ti -v /tmp/host/:/tmp/container/ debian bash<br />apt update && apt install nano<br />nano /tmp/container/foo</span>

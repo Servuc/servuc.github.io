@@ -282,6 +282,39 @@
             <div class="slider-slide">
                 <div class="row">
                     <div class="column">
+                        <h2>Création d'un objet</h2>
+                        <ul>
+                            <li>Prototypage avec devkit</li>
+                            <li>Prototypage réel</li>
+                            <li>Premier appareil de tests</li>
+                            <li>Grande production</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="text-center" data-summary="techno">Et plein de technologies</h1>
+            <div class="slider-slide">
+                <div class="row">
+                    <div class="column">
+                        <h2>Micro-controlleurs</h2>
+                        <ul>
+                            <li>Atmel</li>
+                            <li>Espressif</li>
+                            <li>STM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="text-center" >Et plein de technologies</h1>
+            <div class="slider-slide">
+                <div class="row">
+                    <div class="column">
                         <h2>TL;DR</h2>
                         <ul>
                             <li>Aujourd'hui, plein de technologies</li>
@@ -369,22 +402,6 @@
             <div class="slider-slide">
                 <div class="row">
                     <div class="column">
-                        <h2>Protocole : ZWave (M2M)</h2>
-                        <ul>
-                            <li>M2M, orienté domotique</li>
-                            <li>Propriétaire avec une légère ouverture officiel <a href="http://electronicdesign.com/iot/z-wave-specifications-go-open-source"><i class="fa fa-external-link"></i></a></li>
-                            <li>Open Source non officiel : Open ZWave <a href="https://github.com/openzwave/"><i class="fa fa-external-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <h1 class="text-center">Et plein de technologies</h1>
-            <div class="slider-slide">
-                <div class="row">
-                    <div class="column">
                         <h2>Protocole : Modbus</h2>
                         <ul>
                             <li>M2M, orienté professionnel</li>
@@ -424,23 +441,6 @@
                             <li>Câble</li>
                             <li>Norme</li>
                             <li>Ouvert ? Très répandu, simple à implémenter ?</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <h1 class="text-center">Et plein de technologies</h1>
-            <div class="slider-slide">
-                <div class="row">
-                    <div class="column">
-                        <h2>Protocole : NRF24L01 (M2M)</h2>
-                        <ul>
-                            <li>Protocole ouvert et puce de Nordic SemiConductor <a href="http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24L01"><i class="fa fa-external-link"></i></a></li>
-                            <li>Entre 30 et 800m en 2.4GHz</li>
-                            <li>Puce très répandue et peu coûteuse</li>
-                            <li>Protocole sécurisé</li>
                         </ul>
                     </div>
                 </div>
@@ -515,23 +515,6 @@
             <div class="slider-slide">
                 <div class="row">
                     <div class="column">
-                        <h2>Protocole : EnOcéan <a href="https://www.enocean.com/en/"><i class="fa fa-external-link"></i></a></h2>
-                        <ul>
-                            <li>Récepteur "sans énergie"</li>
-                            <li>Sécurité AES 128bits</li>
-                            <li>30m - 300m, 125kbits/s, bi-directionnel</li>
-                            <li>Norme : ISO/CEI 14543-3-10 en 2012 (10 après) <a href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=59865"><i class="fa fa-external-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <h1 class="text-center">Et plein de technologies</h1>
-            <div class="slider-slide">
-                <div class="row">
-                    <div class="column">
                         <h2>Protocoles propriétaires</h2>
                         <ul>
                             <li>Le mal !!! &#9786;</li>
@@ -548,13 +531,8 @@
             <div class="slider-slide">
                 <div class="row">
                     <div class="column">
-                        <h2>Protocole software : Thread (M2M) <a href="http://threadgroup.org/"><i class="fa fa-external-link"></i></a></h2>
-                        <ul>
-                            <li>Créé par Google (avec Nest)</li>
-                            <li>IPV6, sécurisé, mesh network</li>
-                            <li>Étudié pour la domotique</li>
-                            <li>Même puce que le ZigBee, mais non compatible <a href="https://www.nickhunn.com/is-google-and-nests-thread-a-zigbee-killer/"><i class="fa fa-external-link"></i></a></li>
-                    </ul>
+                        <h2>Stocker la data</h2>
+                        <p>Comment ?</p>
                     </div>
                 </div>
             </div>
@@ -565,88 +543,42 @@
             <div class="slider-slide">
                 <div class="row">
                     <div class="column">
-                        <h2>Protocole software : MQTT</h2>
+                        <h2>Stocker la data</h2>
                         <ul>
-                            <li>M2M : Source <--> Server broker <--> Subscriber</li>
-                            <li>Utiliser par Facebook Messenger</li>
+                            <li>Identifier le capteur (type + physiquement)</li>
+                            <li>Identifier l'instant</li>
+                            <li>Identifier la valeur (et méta)</li>
                         </ul>
+                        <p>Utiliser des unités standards (timestamp, SI, ...)</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div>
-            <h1 class="text-center">Et plein de protocoles</h1>
+            <h1 class="text-center">Et plein de technologies</h1>
             <div class="slider-slide">
                 <div class="row">
                     <div class="column">
-                        <h2>Protocole software : MySensors <a href="https://github.com/mysensors/MySensors"><i class="fa fa-external-link"></i> </a></h2>
-                        <ul>
-                            <li>"Wrapper" NRF24L01+</li>
-                            <li>Node ( <---> Repeater Node ) <---> Gateway</li>
-                            <li>Domotique, Open Source</li>
-                        </ul>
+                        <h2>Traiter la data</h2>
+                        <p>Comment ?</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div>
-            <h1 class="text-center">Et plein de protocoles</h1>
+            <h1 class="text-center">Et plein de technologies</h1>
             <div class="slider-slide">
                 <div class="row">
                     <div class="column">
-                        <h2>Protocole software : Push message <a href="https://developer.mozilla.org/en/docs/Web/API/Push_API"><i class="fa fa-external-link"></i></a></h2>
-                        <ul>
-                            <li>Envoyer des notifications simplement</li>
-                            <li>Techno web</li>
-                            <li>Compatible PC et mobile</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <h1 class="text-center">Et plein de protocoles</h1>
-            <div class="slider-slide">
-                <div class="row">
-                    <div class="column">
-                        <h2>Protocole cloud : AWS IOT <a href="https://aws.amazon.com/fr/iot/"><i class="fa fa-external-link"></i> </a></h2>
-                        <ul>
-                            <li>Avantage : AWS, prix peu élevé</li>
-                            <li>Inconvénient : Prix compliqué à évalué, Amazon</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <h1 class="text-center">Et plein de protocoles</h1>
-            <div class="slider-slide">
-                <div class="row">
-                    <div class="column">
-                        <h2>Protocole cloud : Google IOT <a href="https://cloud.google.com/solutions/iot/"><i class="fa fa-external-link"></i> </a></h2>
-                        <ul>
-                            <li>Avantage : Prix peu élevé</li>
-                            <li>Inconvénient : Google</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <h1 class="text-center">Et plein de protocoles</h1>
-            <div class="slider-slide">
-                <div class="row">
-                    <div class="column">
-                        <h2>Protocole cloud : Oracle IOT <a href="https://cloud.oracle.com/iot"><i class="fa fa-external-link"></i> </a></h2>
-                        <ul>
-                            <li>Avantage : Oracle</li>
-                            <li>Inconvénient : Pour les PRO</li>
-                        </ul>
+                        <h2>Traiter la data</h2>
+                        <ol>
+                            <li>Pipeline d'acquisition (messaging)</li>
+                            <li>Sauvegarde (et raffinement optionnel)</li>
+                            <li>Affichage (avec aggrégation optionnel) (IoT)</li>
+                            <li>Transmettre à l'utilisateur (IoE)</li>
+                        </ol>
                     </div>
                 </div>
             </div>
